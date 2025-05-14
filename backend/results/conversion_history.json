@@ -1,0 +1,349 @@
+[
+  {
+    "timestamp": 1746525890.2442951,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746526058.3776345,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746526294.6266437,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746528285.2589273,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav.wav"
+  },
+  {
+    "timestamp": 1746528317.2599537,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker1.mp3.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker1.mp3.wav"
+  },
+  {
+    "timestamp": 1746528362.1406033,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker1.mp3.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker1.mp3.wav"
+  },
+  {
+    "timestamp": 1746528372.9834943,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker2.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.mp3.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.mp3.wav"
+  },
+  {
+    "timestamp": 1746528449.800747,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3.wav"
+  },
+  {
+    "timestamp": 1746528482.8783274,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "accent": null,
+    "speed": 1.0,
+    "emotion": null,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav.wav"
+  },
+  {
+    "timestamp": 1746528921.4977114,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746528972.9707198,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746529018.2659228,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.7,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746529745.6317747,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "style": "sad",
+    "speed": 1.0,
+    "pitch_shift": 0,
+    "volume": 1.0,
+    "emotion_strength": 1.0,
+    "result_file": "effect_poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/effect_poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746582008.070343,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746582864.0032575,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746583176.5074368,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746584178.8807037,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746584213.795439,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746584788.0660856,
+    "source_file": "nhac.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "nhac_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/nhac_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746584829.6876042,
+    "source_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746584853.7381608,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker2.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker2.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker2.mp3"
+  },
+  {
+    "timestamp": 1746584906.0404966,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\example_reference.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_example_reference.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_example_reference.mp3"
+  },
+  {
+    "timestamp": 1746584956.0604446,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\example_reference.mp3",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_example_reference.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_example_reference.mp3"
+  },
+  {
+    "timestamp": 1746584998.4682484,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746585235.485477,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746585274.5925584,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\example_reference.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_example_reference.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_example_reference.mp3"
+  },
+  {
+    "timestamp": 1746585357.1375673,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\example_reference.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_example_reference.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_example_reference.mp3"
+  },
+  {
+    "timestamp": 1746585790.4324925,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\example_reference.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_example_reference.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_example_reference.mp3"
+  },
+  {
+    "timestamp": 1746585833.0045793,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3"
+  },
+  {
+    "timestamp": 1746783612.1595776,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1746783677.5718646,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav"
+  },
+  {
+    "timestamp": 1746785446.1961145,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker2.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.wav"
+  },
+  {
+    "timestamp": 1747187420.942858,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747187734.447941,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747187783.1693287,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav"
+  },
+  {
+    "timestamp": 1747192091.5315726,
+    "source_file": "instrument_nhac.wav.reformatted.wav_10.flac",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "instrument_nhac.wav.reformatted.wav_10_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/instrument_nhac.wav.reformatted.wav_10_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  }
+]

@@ -1,0 +1,18 @@
+Hệ thống của tôi gôm 3 phần quan trọng nhất 
+1. ai: nơi chưa các model ai thay đổi giọng nói ... ví dụ như openvoice và rvc
+thư mục này sẽ chứa các models ai đã được clone về để sử dụng
+2. backend: nơi này chưa logic backend làm cầu nối giữa frontend và các model ai 
+mỗi phần backend gọi 1 model ai là 1 file 
+và có 1 file kiểm soát toàn bộ các file gọi các models ai đó
+đặc biệt hệ thống backend của tôi thiết kế chỉ để gọi models ai không sử dụng giải pháp dự phòng để sinh ra các file nhằm giải quyết vấn đề ngắn hạn
+tôi muốn hiểu tại sao models ai không hoạt động nên hãy comment và debug để hiểu rõ model ai
+backend sẽ code để gọi được models ai tương ứng
+3. frontend thiết kế để người dùng, dùng được hệ thống của tôi, phải truyền đủ toàn bộ thông tin để mô hình của tôi hoạt động rõ ràng
+cuối cùng hãy xem file hình ảnh và tuân thủ cấu trúc đấy
+
+
+
+
+
+hãy chắc chắn rằng nếu models ai không hoạt động bạn không được tạo giải pháp dự phòng như là gửi lại audio file cũ đấy cho tôi bằng cách chỉnh sửa tần số, được rồi bạn tiếp tục dùng edit file để giúp tôi đi
+Tuyệt đối không được tạo kết quả giả 

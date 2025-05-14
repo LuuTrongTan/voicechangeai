@@ -1,0 +1,8 @@
+{
+  "short_name": "Voice Changer",
+  "name": "Voice Changer - OpenVoice",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0047AB",
+  "background_color": "#ffffff"
+} 
