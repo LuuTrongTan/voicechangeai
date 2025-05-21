@@ -6,6 +6,7 @@ import soundfile as sf
 import librosa
 import time
 import json
+import re
 from models.voice_model_interface import VoiceModelInterface
 
 # Tắt GPU để tránh lỗi với GPU cũ
@@ -25,13 +26,25 @@ class OpenVoiceController(VoiceModelInterface):
         os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
         
         self.model_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'ai', 'openvoice'))
-        self.output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
+        self.results_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
         
         # Tạo thư mục output nếu chưa tồn tại
-        os.makedirs(self.output_dir, exist_ok=True)
+        os.makedirs(self.results_dir, exist_ok=True)
+        
+        # Tạo cấu trúc thư mục mới
+        self.openvoice_dir = os.path.join(self.results_dir, "openvoice")
+        os.makedirs(self.openvoice_dir, exist_ok=True)
+        
+        # Tạo thư mục voice_conversion
+        self.voice_conversion_dir = os.path.join(self.openvoice_dir, "voice_conversion")
+        os.makedirs(self.voice_conversion_dir, exist_ok=True)
+        
+        # Tạo thư mục tts
+        self.tts_dir = os.path.join(self.openvoice_dir, "tts")
+        os.makedirs(self.tts_dir, exist_ok=True)
         
         # Tạo thư mục tạm
-        self.temp_dir = os.path.join(self.output_dir, "temp")
+        self.temp_dir = os.path.join(self.results_dir, "temp")
         os.makedirs(self.temp_dir, exist_ok=True)
         
         # Kiểm tra và tạo thư mục base_speakers nếu cần thiết
@@ -44,6 +57,33 @@ class OpenVoiceController(VoiceModelInterface):
         
         # Thêm đường dẫn vào sys.path để import OpenVoice API
         sys.path.append(self.model_dir)
+        
+        # Cài đặt các gói NLTK cần thiết
+        try:
+            import nltk
+            # Kiểm tra và cài đặt averaged_perceptron_tagger
+            try:
+                nltk.data.find('taggers/averaged_perceptron_tagger')
+            except LookupError:
+                logger.info("Đang cài đặt averaged_perceptron_tagger...")
+                nltk.download('averaged_perceptron_tagger')
+                
+            # Kiểm tra và cài đặt averaged_perceptron_tagger_eng nếu cần
+            try:
+                nltk.data.find('taggers/averaged_perceptron_tagger_eng')
+            except LookupError:
+                logger.info("Đang cài đặt taggers/averaged_perceptron_tagger_eng...")
+                nltk.download('averaged_perceptron_tagger_eng')
+                
+            # Các gói NLTK khác có thể cần thiết
+            for package in ['punkt', 'cmudict']:
+                try:
+                    nltk.data.find(f'tokenizers/{package}')
+                except LookupError:
+                    logger.info(f"Đang cài đặt {package}...")
+                    nltk.download(package)
+        except Exception as e:
+            logger.warning(f"Không thể cài đặt các gói NLTK: {str(e)}")
         
         logger.info("Da khoi tao OpenVoice controller (CPU mode)")
         return True
@@ -103,7 +143,7 @@ class OpenVoiceController(VoiceModelInterface):
             base_name = os.path.basename(input_file_path)
             filename, ext = os.path.splitext(base_name)
             target_voice_basename = os.path.splitext(os.path.basename(target_voice))[0]  # Lấy tên không có đuôi
-            output_file = os.path.join(self.output_dir, f"{filename}_openvoice_{target_voice_basename}.wav")  # Luôn dùng đuôi .wav
+            output_file = os.path.join(self.voice_conversion_dir, f"{filename}_openvoice_{target_voice_basename}.wav")  # Luôn dùng đuôi .wav
             
             # Kiểm tra file âm thanh đầu vào
             logger.info("Kiểm tra và đảm bảo format âm thanh đầu vào hợp lệ")
@@ -219,7 +259,7 @@ class OpenVoiceController(VoiceModelInterface):
             
             # Tạo tên file kết quả
             output_filename = f"tts_{int(time.time())}_{speaker}.wav"
-            output_file = os.path.join(self.output_dir, output_filename)
+            output_file = os.path.join(self.tts_dir, output_filename)
             
             # Tên file speaker embedding (.pth)
             if not speaker.endswith(".pth"):
@@ -248,26 +288,59 @@ class OpenVoiceController(VoiceModelInterface):
             if temp_result and os.path.exists(temp_result):
                 # Sử dụng OpenVoice để áp dụng giọng nói
                 logger.info("Áp dụng giọng nói bằng OpenVoice")
-                result_path = self.convert_voice(temp_result, speaker_path, tau=0.6)
                 
-                # Xóa file tạm
-                if os.path.exists(temp_result):
-                    os.remove(temp_result)
-                
-                if result_path:
-                    logger.info(f"Chuyển văn bản thành giọng nói thành công: {result_path}")
-                    return result_path
+                # Phương pháp tương tự convert_voice nhưng ít tham số điều chỉnh hơn
+                try:
+                    from openvoice.api import ToneColorConverter
+                    
+                    # Đường dẫn đến file cấu hình và checkpoint
+                    config_path = os.path.join(self.model_dir, "checkpoints_v2", "converter", "config.json")
+                    checkpoint_path = os.path.join(self.model_dir, "checkpoints_v2", "converter", "checkpoint.pth")
+                    
+                    # Sử dụng CPU
+                    device = 'cpu'
+                    
+                    # Khởi tạo converter
+                    converter = ToneColorConverter(config_path, device=device)
+                    converter.load_ckpt(checkpoint_path)
+                    
+                    # Trích xuất đặc trưng từ file nguồn
+                    src_se = converter.extract_se([temp_result])
+                    
+                    # Load đặc trưng giọng nói đích
+                    tgt_se = torch.load(speaker_path, map_location=device)
+                    
+                    # Chuyển đổi và lưu kết quả (tau=0.7 để giữ nội dung rõ ràng)
+                    converter.convert(
+                        audio_src_path=temp_result,
+                        src_se=src_se,
+                        tgt_se=tgt_se,
+                        output_path=output_file,
+                        tau=0.7
+                    )
+                    
+                    # Kiểm tra kết quả
+                    if os.path.exists(output_file):
+                        logger.info(f"TTS thành công, đã lưu kết quả tại: {output_file}")
+                        return output_file
+                    
+                except Exception as e:
+                    logger.error(f"Lỗi khi áp dụng giọng nói: {str(e)}")
+                    # Nếu bước OpenVoice lỗi, sử dụng kết quả tạm thời
+                    logger.info(f"Sử dụng kết quả tạm thời: {temp_result}")
+                    # Sao chép file từ thư mục tạm sang thư mục tts
+                    import shutil
+                    shutil.copy(temp_result, output_file)
+                    return output_file
             
-            # ---------- PHƯƠNG PHÁP 2: Thất bại, trả về lỗi ----------
-            logger.error("Không thể tạo file âm thanh")
             return None
             
         except Exception as e:
-            logger.error(f"Lỗi khi chuyển văn bản thành giọng nói: {str(e)}")
+            logger.error(f"Lỗi khi thực hiện text-to-speech: {str(e)}")
             import traceback
             logger.error(traceback.format_exc())
             return None
-    
+            
     def generate_speech_with_melotts(self, text, language, speed):
         """
         Tạo âm thanh từ văn bản sử dụng thư viện MeloTTS
@@ -302,8 +375,93 @@ class OpenVoiceController(VoiceModelInterface):
             logger.info(f"Khởi tạo MeloTTS với ngôn ngữ: {locale}")
             tts = TTS(language=locale)
             
-            # Phương thức tts_to_file BẮT BUỘC cần speaker_id
-            logger.info(f"Tạo file âm thanh với text: {text}")
+            # Phân đoạn văn bản nếu quá dài để tránh lỗi
+            if len(text) > 500:
+                logger.info(f"Văn bản quá dài ({len(text)} ký tự), phân đoạn để xử lý...")
+                audio_segments = []
+                
+                # Phân đoạn theo dấu câu
+                if language.lower() == "english":
+                    # Sử dụng biểu thức chính quy để tách câu tiếng Anh
+                    sentences = re.split(r'(?<=[.!?])\s+', text)
+                    
+                    # Nhóm các câu thành đoạn nhỏ hơn 500 ký tự
+                    chunks = []
+                    current_chunk = ""
+                    
+                    for sentence in sentences:
+                        if len(current_chunk) + len(sentence) < 500:
+                            current_chunk += (" " if current_chunk else "") + sentence
+                        else:
+                            if current_chunk:
+                                chunks.append(current_chunk)
+                            current_chunk = sentence
+                    
+                    if current_chunk:
+                        chunks.append(current_chunk)
+                        
+                    logger.info(f"Đã phân đoạn thành {len(chunks)} đoạn văn bản")
+                    
+                    # Xử lý từng đoạn và nối lại
+                    temp_files = []
+                    for i, chunk in enumerate(chunks):
+                        chunk_file = os.path.join(self.temp_dir, f"temp_tts_chunk_{i}_{int(time.time())}.wav")
+                        logger.info(f"Xử lý đoạn {i+1}/{len(chunks)}: {chunk[:50]}...")
+                        
+                        try:
+                            tts.tts_to_file(
+                                text=chunk, 
+                                speaker_id=0,
+                                output_path=chunk_file,
+                                speed=speed,
+                                sdp_ratio=0.2,
+                                noise_scale=0.6
+                            )
+                            temp_files.append(chunk_file)
+                        except Exception as chunk_err:
+                            logger.error(f"Lỗi khi xử lý đoạn {i+1}: {str(chunk_err)}")
+                    
+                    # Nối các file âm thanh lại
+                    if temp_files:
+                        import numpy as np
+                        from scipy.io import wavfile
+                        
+                        audio_data = []
+                        sample_rate = None
+                        
+                        for tf in temp_files:
+                            try:
+                                sr, data = wavfile.read(tf)
+                                if sample_rate is None:
+                                    sample_rate = sr
+                                audio_data.append(data)
+                            except Exception as e:
+                                logger.error(f"Lỗi khi đọc file {tf}: {str(e)}")
+                        
+                        if audio_data and sample_rate:
+                            combined = np.concatenate(audio_data)
+                            wavfile.write(temp_file, sample_rate, combined)
+                            logger.info(f"Đã nối {len(temp_files)} đoạn âm thanh thành công")
+                            
+                            # Xóa các file tạm
+                            for tf in temp_files:
+                                try:
+                                    os.remove(tf)
+                                except:
+                                    pass
+                            
+                            return temp_file
+                    
+                    # Nếu xử lý đoạn không thành công, thử xử lý cả văn bản
+                    logger.warning("Xử lý phân đoạn không thành công, thử xử lý nguyên văn bản...")
+                
+                # Đối với các ngôn ngữ khác hoặc nếu phân đoạn tiếng Anh thất bại
+                else:
+                    logger.warning(f"Không hỗ trợ phân đoạn cho ngôn ngữ {language}, cắt ngắn văn bản...")
+                    text = text[:500]  # Cắt ngắn văn bản
+            
+            # Xử lý văn bản (nguyên bản hoặc đã cắt ngắn)
+            logger.info(f"Tạo file âm thanh với text: {text[:100]}...")
             tts.tts_to_file(
                 text=text, 
                 speaker_id=0,  # speaker_id=0 là giá trị mặc định
@@ -331,8 +489,10 @@ class OpenVoiceController(VoiceModelInterface):
             if os.path.exists(voices_dir):
                 for item in os.listdir(voices_dir):
                     if item.endswith(('.wav', '.mp3', '.flac')):
-                        voice_path = os.path.join(voices_dir, item)
-                        voices.append(voice_path)
+                        # Bỏ qua các file có "sample" trong tên
+                        if 'sample' not in item.lower():
+                            voice_path = os.path.join(voices_dir, item)
+                            voices.append(voice_path)
         except Exception as e:
             logger.error(f"Loi khi liet ke giong tu sample_voices: {str(e)}")
             
@@ -342,8 +502,10 @@ class OpenVoiceController(VoiceModelInterface):
             if os.path.exists(resources_dir):
                 for item in os.listdir(resources_dir):
                     if item.endswith(('.wav', '.mp3')) and (
-                        item.startswith('demo_speaker') or 
-                        item == 'example_reference.mp3'
+                        # Bỏ qua các file có "demo" hoặc "example" trong tên
+                        not item.startswith('demo_speaker') and 
+                        item != 'example_reference.mp3' and
+                        'sample' not in item.lower()
                     ):
                         voice_path = os.path.join(resources_dir, item)
                         voices.append(voice_path)

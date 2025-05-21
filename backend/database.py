@@ -22,8 +22,19 @@ class SystemLog(db.Model):
     level = db.Column(db.String(10))  # INFO, WARNING, ERROR
     message = db.Column(db.Text)
     source = db.Column(db.String(50))  # API, SYSTEM, USER
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    user_id = db.Column(db.Integer, nullable=True)  # Đã xóa ForeignKey tạm thời
     details = db.Column(db.Text)  # JSON string for additional details
 
     def __repr__(self):
-        return f'<SystemLog {self.timestamp} {self.level}>' 
+        return f'<SystemLog {self.timestamp} {self.level}>'
+
+def init_db(app):
+    """Khởi tạo và cập nhật database"""
+    with app.app_context():
+        # Xóa tất cả các bảng
+        db.drop_all()
+        
+        # Tạo lại tất cả các bảng với cấu trúc mới
+        db.create_all()
+        
+        print("Đã khởi tạo lại database thành công!") 

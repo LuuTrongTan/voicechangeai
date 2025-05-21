@@ -19,4 +19,11 @@ sentencepiece==0.1.99
 inflect==7.0.0
 unidecode==1.3.6
 tensorboardX==2.6.2
-av==11.0.0 
+av==11.0.0
+torchaudio
+onnxruntime
+hyperpyyaml
+flask_cors
+loguru
+whisper
+git+https://github.com/underthesea/underthesea.git 

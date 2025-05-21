@@ -1,0 +1,137 @@
+[
+  {
+    "timestamp": 1747217793.0332115,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747275480.282337,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\resources\\demo_speaker2.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker2.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker2.wav"
+  },
+  {
+    "timestamp": 1747275552.544025,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747276797.0445201,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747276945.4344199,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747278241.680364,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747298968.1175046,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav"
+  },
+  {
+    "timestamp": 1747299017.3500462,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\demo_speaker2.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker2.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker2.wav"
+  },
+  {
+    "timestamp": 1747304214.6302102,
+    "source_file": "vocal_nhac.wav_0.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\vocal_sontung.mp3_0.wav",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav",
+    "result_url": "/api/download/vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747304380.4253674,
+    "source_file": "vocal_nhac.wav_0.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\vocal_sontung.mp3_0.wav",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav",
+    "result_url": "/api/download/vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747304585.184863,
+    "source_file": "vocal_nhac.wav_0.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\vocal_sontung.mp3_0.wav",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav",
+    "result_url": "/api/download/vocal_nhac.wav_0_openvoice_vocal_sontung.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747378860.7200813,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav"
+  },
+  {
+    "timestamp": 1747378973.3706086,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "model_used": "openvoice",
+    "tau": 1.0,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav"
+  },
+  {
+    "timestamp": 1747382041.6362486,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_openvoice_thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.wav"
+  },
+  {
+    "timestamp": 1747712516.9205594,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "D:\\Code\\voice\\ai\\openvoice\\sample_voices\\demo_speaker1.mp3",
+    "model_used": "openvoice",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav"
+  }
+]

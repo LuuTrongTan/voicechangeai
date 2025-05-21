@@ -1,0 +1,14 @@
+services:
+  api:
+    image: viet-tts:latest
+    build: .
+    restart: always
+    container_name: viet-tts-service
+    ports:
+      - 8298:8298
+    environment:
+      - CUDA_VISIBLE_DEVICES=-1  # Tắt sử dụng GPU
+      - PYTORCH_DEVICE=cpu       # Buộc PyTorch sử dụng CPU
+    volumes:
+      - ./pretrained-models:/app/pretrained-models
+    command: viettts server --host 0.0.0.0 --port 8298 

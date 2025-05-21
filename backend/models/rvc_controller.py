@@ -5,6 +5,10 @@ import traceback
 import subprocess
 import shutil
 import datetime
+import torch
+import json
+import time
+import glob
 
 logger = logging.getLogger(__name__)
 
@@ -12,14 +16,22 @@ class RVCController:
     def __init__(self):
         """Khởi tạo controller cho mô hình RVC (Retrieval-based Voice Conversion)"""
         self.model_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'ai', 'rvc'))
-        self.output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
+        self.results_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
         self.models_dir = os.path.join(self.model_dir, 'models')
-        self.weights_dir = os.path.join(self.model_dir, 'weights')
+        self.weights_dir = os.path.join(self.model_dir, 'assets', 'weights')
         self.logs_dir = os.path.join(self.model_dir, 'logs')
         self.uvr_dir = os.path.join(self.model_dir, 'infer', 'modules', 'uvr5')
         
+        # Cấu trúc thư mục mới
+        self.rvc_results_dir = os.path.join(self.results_dir, "rvc")
+        self.voice_conversion_dir = os.path.join(self.rvc_results_dir, "voice_conversion")
+        self.uvr_results_dir = os.path.join(self.rvc_results_dir, "uvr")
+        
         # Tạo các thư mục cần thiết nếu chưa tồn tại
-        os.makedirs(self.output_dir, exist_ok=True)
+        os.makedirs(self.results_dir, exist_ok=True)
+        os.makedirs(self.rvc_results_dir, exist_ok=True)
+        os.makedirs(self.voice_conversion_dir, exist_ok=True)
+        os.makedirs(self.uvr_results_dir, exist_ok=True)
         os.makedirs(self.models_dir, exist_ok=True)
         os.makedirs(self.weights_dir, exist_ok=True)
         os.makedirs(self.logs_dir, exist_ok=True)
@@ -54,426 +66,365 @@ class RVCController:
     
     def convert_voice(self, input_file_path, target_voice, f0up_key=0, index_rate=0.5, protect=0.33, rms_mix_rate=0.25):
         """
-        Chuyển đổi giọng nói từ file âm thanh đầu vào sang giọng nói đích sử dụng RVC
-        
-        Args:
-            input_file_path (str): Đường dẫn đến file âm thanh đầu vào
-            target_voice (str): Tên của giọng nói đích
-            f0up_key (int): Điều chỉnh pitch, 0 nếu không thay đổi
-            index_rate (float): Tỷ lệ áp dụng index feature, từ 0.0 đến 1.0
-            protect (float): Bảo vệ tiếng nổi (consonants), từ 0.0 đến 0.5
-            rms_mix_rate (float): Tỷ lệ trộn RMS, từ 0.0 đến 1.0
-            
-        Returns:
-            str: Đường dẫn đến file âm thanh kết quả nếu thành công, None nếu thất bại
+        Chuyển đổi giọng nói từ file âm thanh đầu vào sang giọng nói đích sử dụng RVC CLI
         """
         if not self.is_model_available:
             logger.error("Không thể chuyển đổi: Mô hình RVC chưa được cài đặt")
             return None
-            
+
         # Tạo tên file kết quả
         base_name = os.path.basename(input_file_path)
         filename, ext = os.path.splitext(base_name)
-        output_file = os.path.join(self.output_dir, f"{filename}_rvc_{target_voice}{ext}")
-        
+        target_voice_basename = os.path.splitext(os.path.basename(target_voice))[0]
+        output_file = os.path.abspath(os.path.join(self.voice_conversion_dir, f"{filename}_rvc_{target_voice_basename}{ext}"))
+
         try:
             # Kiểm tra xem có model và index tương ứng không
             model_path = self._find_model_path(target_voice)
             index_path = self._find_index_path(target_voice)
-            
+
             if not model_path:
                 logger.error(f"Không tìm thấy model cho {target_voice}")
                 return None
-            
-            # Kiểm tra và giới hạn các tham số
-            f0up_key = int(f0up_key)  # Đảm bảo là số nguyên
-            
-            # Giới hạn index_rate trong khoảng [0, 1]
-            index_rate = max(0.0, min(1.0, float(index_rate)))
-            
-            # Giới hạn protect trong khoảng [0, 0.5]
-            protect = max(0.0, min(0.5, float(protect)))
-            
-            # Giới hạn rms_mix_rate trong khoảng [0, 1]
-            rms_mix_rate = max(0.0, min(1.0, float(rms_mix_rate)))
-            
-            # Gọi trực tiếp đến infer-web.py của RVC
-            infer_web_path = os.path.join(self.model_dir, "infer-web.py")
-            
-            # Thiết lập các tham số cho infer-web.py với cú pháp mới
+
+            # Đường dẫn tuyệt đối cho input
+            input_path = os.path.abspath(input_file_path)
+
+            # Đường dẫn model và index: chỉ lấy tên file
+            model_name = os.path.basename(model_path)
+            index_name = os.path.basename(index_path) if index_path else ""
+
+            # Đường dẫn tới CLI script
+            cli_script = os.path.join(self.model_dir, 'tools', 'infer_cli.py')
+            cli_script = os.path.abspath(cli_script)
+
+            # Thiết lập các tham số cho CLI
             cmd = [
                 sys.executable,
-                infer_web_path,
-                "--tab", "0",                    # Tab 0: chuyển đổi giọng nói
-                "--input_path", input_file_path,
-                "--output_path", output_file,
-                "--model_path", model_path,
+                cli_script,
+                "--input_path", input_path,
+                "--opt_path", output_file,
+                "--model_name", model_name,
                 "--f0up_key", str(f0up_key),
                 "--index_rate", str(index_rate),
                 "--protect", str(protect),
                 "--rms_mix_rate", str(rms_mix_rate),
-                "--filter_radius", "3",          # Giá trị mặc định
-                "--resample_sr", "0",            # Giữ nguyên tần số lấy mẫu
-                "--mode", "1"                    # Chế độ chuyển đổi trực tiếp
             ]
-            
-            # Thêm index path nếu có
-            if index_path:
-                cmd.extend(["--index_path", index_path])
-            
-            logger.info(f"Đang chạy lệnh: {' '.join(cmd)}")
-            
+            if index_name:
+                cmd.extend(["--index_path", index_name])
+
+            logger.info(f"Đang chạy lệnh CLI: {' '.join(cmd)}")
+
             # Thực thi và lấy kết quả
-            original_dir = os.getcwd()
-            try:
-                # Chuyển đến thư mục RVC để script có thể tìm thấy các module cần thiết
-                os.chdir(self.model_dir)
-                
-                process = subprocess.Popen(
-                    cmd,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True
-                )
-                stdout, stderr = process.communicate()
-                
-                # Ghi log kết quả
-                logger.info(f"Kết quả từ RVC: {stdout}")
-                if stderr:
-                    logger.error(f"Lỗi từ RVC: {stderr}")
-                
-                # Kiểm tra kết quả và log
-                if process.returncode != 0:
-                    logger.error(f"Lỗi khi chạy RVC, mã trả về: {process.returncode}")
-                    return None
-            finally:
-                # Khôi phục thư mục làm việc
-                os.chdir(original_dir)
-                
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                cwd=self.model_dir
+            )
+            stdout, stderr = process.communicate()
+
+            logger.info(f"Kết quả CLI stdout: {stdout}")
+            if stderr:
+                logger.error(f"Kết quả CLI stderr: {stderr}")
+
+            if process.returncode != 0:
+                logger.error(f"Lỗi khi chạy CLI, mã trả về: {process.returncode}")
+                return None
+
             # Kiểm tra xem file kết quả có tồn tại không
             if os.path.exists(output_file):
                 logger.info(f"Đã tạo file kết quả: {output_file}")
+                
+                # Lưu thông tin vào lịch sử chuyển đổi
+                self._save_conversion_history(input_file_path, target_voice, output_file, {
+                    'f0up_key': f0up_key,
+                    'index_rate': index_rate,
+                    'protect': protect,
+                    'rms_mix_rate': rms_mix_rate
+                })
+                
                 return output_file
             else:
                 logger.error(f"Không tìm thấy file kết quả: {output_file}")
                 return None
-                
+
         except Exception as e:
-            logger.exception(f"Lỗi khi xử lý RVC: {str(e)}")
-            logger.error(traceback.format_exc())
+            logger.exception(f"Lỗi khi xử lý RVC CLI: {str(e)}")
             return None
     
-    def separate_vocals(self, input_file_path, vocal_type='vocals'):
-        """
-        Tách giọng nói khỏi âm nhạc sử dụng UVR5
-        
-        Args:
-            input_file_path (str): Đường dẫn đến file âm thanh đầu vào
-            vocal_type (str): Loại tách ("vocals", "instrumental", "both")
+    def _save_conversion_history(self, input_file_path, target_voice, output_file, params=None):
+        """Lưu thông tin chuyển đổi vào lịch sử"""
+        try:
+            history_file = os.path.join(self.voice_conversion_dir, 'conversion_history.json')
             
-        Returns:
-            dict: Dictionary chứa đường dẫn đến các file kết quả
-        """
+            # Tạo bản ghi mới
+            history_entry = {
+                'timestamp': time.time(),
+                'source_file': os.path.basename(input_file_path),
+                'target_voice': target_voice,
+                'result_file': os.path.basename(output_file),
+                'result_url': f"/api/download/{os.path.basename(output_file)}",
+                'params': params or {}
+            }
+            
+            # Đọc lịch sử hiện tại
+            history = []
+            if os.path.exists(history_file):
+                try:
+                    with open(history_file, 'r', encoding='utf-8') as f:
+                        history = json.load(f)
+                except Exception as e:
+                    logger.error(f"Lỗi khi đọc file lịch sử: {str(e)}")
+                    history = []
+            
+            # Thêm bản ghi mới và lưu lại
+            history.append(history_entry)
+            with open(history_file, 'w', encoding='utf-8') as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
+                
+            logger.info(f"Đã lưu thông tin chuyển đổi vào lịch sử: {os.path.basename(output_file)}")
+            
+        except Exception as e:
+            logger.error(f"Lỗi khi lưu lịch sử chuyển đổi: {str(e)}")
+    
+    def separate_vocals(self, input_file_path, model_name=None, vocal_type='vocals'):
+        """Tách giọng nói khỏi âm nhạc sử dụng UVR5"""
         if not self.is_model_available:
             logger.error("Không thể tách giọng: Mô hình RVC chưa được cài đặt")
             return None
-            
-        # Tạo tên file kết quả
+        
+        # Tạo tên file kết quả cố định
         base_name = os.path.basename(input_file_path)
         filename, ext = os.path.splitext(base_name)
         
-        # Tạo thư mục output nếu chưa tồn tại
-        os.makedirs(self.output_dir, exist_ok=True)
+        # Tạo thư mục đầu ra
+        vocals_dir = os.path.join(self.uvr_results_dir, "vocals")
+        instrumental_dir = os.path.join(self.uvr_results_dir, "instrumental")
+        os.makedirs(vocals_dir, exist_ok=True)
+        os.makedirs(instrumental_dir, exist_ok=True)
         
         try:
-            # Gọi trực tiếp đến infer-web.py với tab UVR
-            infer_web_path = os.path.join(self.model_dir, "infer-web.py")
+            # Lưu thư mục hiện tại
+            original_dir = os.getcwd()
             
-            if not os.path.exists(infer_web_path):
-                logger.error(f"Không tìm thấy script infer-web.py: {infer_web_path}")
+            # Chuyển đổi đường dẫn input thành đường dẫn tuyệt đối
+            input_file_abs_path = os.path.abspath(input_file_path)
+            
+            if not os.path.exists(input_file_abs_path):
+                logger.error(f"File đầu vào không tồn tại: {input_file_abs_path}")
                 return None
             
-            # Thiết lập tham số cho RVC UVR
-            cmd = [
-                sys.executable,
-                infer_web_path,
-                "--tab", "4",                   # Tab 4 là UVR (tách giọng nói)
-                "--dir_wav_input", "",         # Để trống vì chúng ta chỉ xử lý một file
-                "--wav_inputs", input_file_path,
-                "--opt_vocal_root", self.output_dir,
-                "--opt_ins_root", self.output_dir,
-                "--opt_model", "HP2_all",      # Model mặc định cho UVR5
-                "--format0", "wav"             # Format xuất ra
-            ]
-            
-            logger.info(f"Đang chạy lệnh tách giọng nói: {' '.join(cmd)}")
-            
-            # Thực thi và lấy kết quả
-            original_dir = os.getcwd()
             try:
+                # Chuyển đến thư mục RVC
                 os.chdir(self.model_dir)
                 
-                process = subprocess.Popen(
-                    cmd,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True
+                # Thêm thư mục RVC vào sys.path
+                if self.model_dir not in sys.path:
+                    sys.path.insert(0, self.model_dir)
+                
+                # Chọn model UVR5
+                if model_name is None:
+                    model_name = "HP2_all_vocals"
+                
+                # Đường dẫn đến mô hình UVR5
+                uvr5_weights_dir = os.path.join(self.model_dir, 'assets', 'uvr5_weights')
+                model_path = os.path.join(uvr5_weights_dir, f"{model_name}.pth")
+                
+                if not os.path.exists(model_path) and not model_name.startswith("onnx_"):
+                    logger.error(f"Không tìm thấy mô hình UVR5: {model_path}")
+                    available_models = self.list_uvr_models()
+                    logger.info(f"Các mô hình khả dụng: {available_models}")
+                    if len(available_models) > 0:
+                        model_name = available_models[0]
+                        model_path = os.path.join(uvr5_weights_dir, f"{model_name}.pth")
+                        logger.info(f"Sử dụng mô hình thay thế: {model_name}")
+                    else:
+                        logger.error("Không có mô hình UVR5 nào khả dụng")
+                        return None
+                
+                # Thiết lập weight_uvr5_root cho infer/modules/uvr5/modules.py
+                os.environ["weight_uvr5_root"] = uvr5_weights_dir
+                
+                # Log thông tin xử lý
+                logger.info(f"Tách giọng nói từ file: {input_file_abs_path}")
+                logger.info(f"Sử dụng mô hình: {model_name}")
+                logger.info(f"Thư mục vocals: {vocals_dir}")
+                logger.info(f"Thư mục instrumental: {instrumental_dir}")
+                
+                # Kiểm tra xem có phải là DeEcho model không
+                use_deecho = "DeEcho" in model_name
+                
+                # Tạo đối tượng xử lý âm thanh
+                from infer.modules.uvr5.vr import AudioPre, AudioPreDeEcho
+                
+                # Kiểm tra GPU
+                is_half = torch.cuda.is_available()
+                device = "cuda" if torch.cuda.is_available() else "cpu"
+                logger.info(f"Sử dụng thiết bị: {device}, half precision: {is_half}")
+                
+                # Tạo đối tượng xử lý tương ứng
+                processor_class = AudioPreDeEcho if use_deecho else AudioPre
+                audio_processor = processor_class(
+                    agg=0,  # Mức độ xử lý (0-100)
+                    model_path=model_path,
+                    device=device,
+                    is_half=is_half
                 )
-                stdout, stderr = process.communicate()
                 
-                # Log kết quả
-                logger.info(f"Kết quả từ RVC UVR: {stdout}")
-                if stderr:
-                    logger.error(f"Lỗi từ RVC UVR: {stderr}")
+                # Kiểm tra xem model có phải là HP3 không
+                is_hp3 = "HP3" in model_name
                 
-                if process.returncode != 0:
-                    logger.error(f"Lỗi khi tách giọng nói, mã trả về: {process.returncode}")
+                # Xử lý âm thanh và trích xuất giọng nói
+                try:
+                    result = audio_processor._path_audio_(
+                        input_file_abs_path,  # Đường dẫn tuyệt đối đầu vào
+                        instrumental_dir,     # Thư mục cho nhạc nền
+                        vocals_dir,           # Thư mục cho giọng hát
+                        "wav",                # Định dạng xuất
+                        is_hp3=is_hp3         # Có phải là HP3 không
+                    )
+                    logger.info(f"Kết quả xử lý âm thanh: {result}")
+                except Exception as e:
+                    logger.exception(f"Lỗi khi xử lý âm thanh: {str(e)}")
                     return None
+                
+                # Tìm các file kết quả từ UVR5
+                result_files = self._find_uvr_output_files(vocals_dir, instrumental_dir, filename)
+                
+                if result_files:
+                    # Sử dụng trực tiếp các file kết quả từ UVR5 thay vì tạo bản sao
+                    vocals_output = result_files.get('vocals')
+                    instrumental_output = result_files.get('instrumental')
+                    
+                    if vocals_output and instrumental_output:
+                        # Cập nhật lịch sử UVR
+                        self._save_uvr_history(input_file_path, model_name, vocals_output, instrumental_output)
+                        
+                        # Ghi log đường dẫn đầy đủ để debug
+                        logger.info(f"UVR Result - vocals: {vocals_output}")
+                        logger.info(f"UVR Result - instrumental: {instrumental_output}")
+                        
+                        # Trả về đường dẫn các file kết quả
+                        return {
+                            'vocals': vocals_output,
+                            'instrumental': instrumental_output
+                        }
+                    else:
+                        logger.error("Không tìm thấy đủ file vocals và instrumental từ UVR5")
+                        return None
+                else:
+                    logger.error("Không tìm thấy file kết quả từ UVR5")
+                    return None
+                
             finally:
+                # Quay lại thư mục ban đầu
                 os.chdir(original_dir)
-            
-            # Xác định tên file kết quả dựa trên quy ước đặt tên của RVC
-            # Thông thường RVC sẽ tạo vocals_{tên_file} và instrument_{tên_file}
-            vocals_output = os.path.join(self.output_dir, f"vocals_{filename}.wav")
-            instrumental_output = os.path.join(self.output_dir, f"instrument_{filename}.wav")
-            
-            # Nếu không tìm thấy, tìm kiếm thêm
-            if not os.path.exists(vocals_output):
-                for file in os.listdir(self.output_dir):
-                    if file.startswith("vocals_") and filename in file:
-                        vocals_output = os.path.join(self.output_dir, file)
-                        break
-            
-            if not os.path.exists(instrumental_output):
-                for file in os.listdir(self.output_dir):
-                    if file.startswith("instrument_") and filename in file:
-                        instrumental_output = os.path.join(self.output_dir, file)
-                        break
-            
-            # Trả về kết quả dựa trên yêu cầu
-            results = {}
-            
-            if (vocal_type == 'vocals' or vocal_type == 'both') and os.path.exists(vocals_output):
-                results['vocals'] = vocals_output
-                
-            if (vocal_type == 'instrumental' or vocal_type == 'both') and os.path.exists(instrumental_output):
-                results['instrumental'] = instrumental_output
-                
-            if not results:
-                logger.error("Không tìm thấy file kết quả sau khi tách giọng")
-                return None
-                
-            return results
                 
         except Exception as e:
             logger.exception(f"Lỗi khi tách giọng nói: {str(e)}")
-            logger.error(traceback.format_exc())
-            return None
-            
-    def train_model(self, dataset_path, model_name, epoch=200, batch_size=8, f0_method='dio'):
-        """
-        Huấn luyện model RVC mới
-
-        Args:
-            dataset_path (str): Đường dẫn đến thư mục chứa dữ liệu huấn luyện
-            model_name (str): Tên cho model mới
-            epoch (int): Số epoch huấn luyện
-            batch_size (int): Kích thước batch
-            f0_method (str): Phương pháp tính F0 ('dio', 'harvest', 'crepe')
-
-        Returns:
-            str: Đường dẫn đến model mới nếu thành công, None nếu thất bại
-        """
-        if not self.is_model_available:
-            logger.error("Không thể huấn luyện: Mô hình RVC chưa được cài đặt")
             return None
         
-        # Tạo thời gian bắt đầu để đặt tên cho model
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        full_model_name = f"{model_name}_{timestamp}"
-        
+    def _save_uvr_history(self, input_file_path, model_name, vocals_output, instrumental_output):
+        """Lưu thông tin tách giọng nói vào lịch sử"""
         try:
-            # Gọi trực tiếp đến infer-web.py với tab huấn luyện
-            infer_web_path = os.path.join(self.model_dir, "infer-web.py")
+            history_file = os.path.join(self.uvr_results_dir, 'uvr_history.json')
             
-            if not os.path.exists(infer_web_path):
-                logger.error(f"Không tìm thấy script infer-web.py: {infer_web_path}")
-                return None
+            # Tạo bản ghi mới với đường dẫn file thực tế
+            history_entry = {
+                'timestamp': time.time(),
+                'source_file': os.path.basename(input_file_path),
+                'model_name': model_name,
+                'vocals_file': os.path.basename(vocals_output),
+                'vocals_url': f"/api/download/{os.path.basename(vocals_output)}",
+                'instrumental_file': os.path.basename(instrumental_output),
+                'instrumental_url': f"/api/download/{os.path.basename(instrumental_output)}"
+            }
             
-            # Thiết lập tham số cho quá trình huấn luyện
-            cmd = [
-                sys.executable,
-                infer_web_path,
-                "--tab", "2",                     # Tab 2 là huấn luyện model
-                "--exp_dir1", full_model_name,    # Tên thư mục thí nghiệm
-                "--trainset_dir4", dataset_path,  # Đường dẫn tới dữ liệu huấn luyện
-                "--sr2", "40k",                   # Tần số lấy mẫu mục tiêu
-                "--if_f0_3", "True",              # Có sử dụng F0 không
-                "--save_epoch10", "10",           # Lưu mỗi bao nhiêu epoch
-                "--total_epoch11", str(epoch),    # Tổng số epoch
-                "--batch_size12", str(batch_size), # Kích thước batch
-                "--if_save_latest13", "True",     # Có lưu mô hình mới nhất không
-                "--f0method8", f0_method,         # Phương pháp tính F0
-                "--version19", "v2"               # Phiên bản RVC (v2 mới nhất)
-            ]
+            # Đọc lịch sử hiện tại
+            history = []
+            if os.path.exists(history_file):
+                try:
+                    with open(history_file, 'r', encoding='utf-8') as f:
+                        history = json.load(f)
+                except Exception as e:
+                    logger.error(f"Lỗi khi đọc file lịch sử UVR: {str(e)}")
+                    history = []
             
-            logger.info(f"Đang chạy lệnh huấn luyện model: {' '.join(cmd)}")
-            
-            # Thực thi và lấy kết quả
-            original_dir = os.getcwd()
-            try:
-                os.chdir(self.model_dir)
+            # Thêm bản ghi mới và lưu lại
+            history.append(history_entry)
+            with open(history_file, 'w', encoding='utf-8') as f:
+                json.dump(history, f, ensure_ascii=False, indent=2)
                 
-                process = subprocess.Popen(
-                    cmd,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True
-                )
-                stdout, stderr = process.communicate()
-                
-                # Log kết quả
-                logger.info(f"Kết quả từ quá trình huấn luyện: {stdout}")
-                if stderr:
-                    logger.error(f"Lỗi từ quá trình huấn luyện: {stderr}")
-                
-                if process.returncode != 0:
-                    logger.error(f"Lỗi khi huấn luyện model, mã trả về: {process.returncode}")
-                    return None
-            finally:
-                os.chdir(original_dir)
-            
-            # Đường dẫn dự kiến đến model đã huấn luyện
-            model_path = os.path.join(self.logs_dir, full_model_name, "best_model.pth")
-            index_path = os.path.join(self.logs_dir, full_model_name, f"{full_model_name}.index")
-            
-            # Kiểm tra xem model có tồn tại không
-            if os.path.exists(model_path):
-                # Sao chép model vào thư mục models
-                target_path = os.path.join(self.models_dir, f"{full_model_name}.pth")
-                shutil.copy(model_path, target_path)
-                
-                logger.info(f"Đã huấn luyện model thành công: {target_path}")
-                return target_path
-            else:
-                logger.error(f"Không tìm thấy model sau khi huấn luyện: {model_path}")
-                return None
-                
+            logger.info(f"Đã lưu thông tin tách giọng nói vào lịch sử UVR")
+        
         except Exception as e:
-            logger.exception(f"Lỗi khi huấn luyện model: {str(e)}")
-            logger.error(traceback.format_exc())
-            return None
+            logger.error(f"Lỗi khi lưu lịch sử UVR: {str(e)}")
     
-    def extract_f0(self, input_file_path, f0_method='dio'):
-        """
-        Trích xuất đường cong F0 từ file âm thanh
+    def _find_uvr_output_files(self, vocals_dir, instrumental_dir, filename):
+        """Tìm các file được tạo ra sau khi tách giọng với UVR5"""
+        # Các định dạng tên file cần kiểm tra
+        vocals_patterns = [
+            os.path.join(vocals_dir, f"vocals_{filename}_*.wav"),
+            os.path.join(vocals_dir, f"{filename}_vocals*.wav"),
+            os.path.join(vocals_dir, f"{filename}_v*.wav"),
+            os.path.join(vocals_dir, f"vocal_{filename}*.wav"),
+            os.path.join(vocals_dir, 'uvr_output', f"{filename}*.wav"),
+            os.path.join(vocals_dir, 'uvr_output', f"vocals_{filename}*.wav")
+        ]
         
-        Args:
-            input_file_path (str): Đường dẫn đến file âm thanh
-            f0_method (str): Phương pháp trích xuất F0 ('dio', 'harvest', 'crepe')
-            
-        Returns:
-            str: Đường dẫn đến file F0 đã trích xuất nếu thành công, None nếu thất bại
-        """
-        if not self.is_model_available:
-            logger.error("Không thể trích xuất F0: Mô hình RVC chưa được cài đặt")
-            return None
-            
-        # Tạo tên file kết quả
-        base_name = os.path.basename(input_file_path)
-        filename, ext = os.path.splitext(base_name)
-        output_file = os.path.join(self.output_dir, f"{filename}_f0.npy")
+        instrumental_patterns = [
+            os.path.join(instrumental_dir, f"instrument_{filename}_*.wav"),
+            os.path.join(instrumental_dir, f"{filename}_instruments*.wav"),
+            os.path.join(instrumental_dir, f"{filename}_i*.wav"),
+            os.path.join(instrumental_dir, 'uvr_output', f"instrument_{filename}*.wav"),
+            os.path.join(instrumental_dir, 'uvr_output', f"instruments_{filename}*.wav")
+        ]
         
-        try:
-            # Gọi trực tiếp đến infer-web.py với tab trích xuất đặc trưng
-            infer_web_path = os.path.join(self.model_dir, "infer-web.py")
-            
-            if not os.path.exists(infer_web_path):
-                logger.error(f"Không tìm thấy script infer-web.py: {infer_web_path}")
-                return None
-            
-            # Tạo thư mục dataset tạm để RVC xử lý
-            temp_dataset_dir = os.path.join(self.output_dir, f"temp_dataset_{filename}")
-            os.makedirs(temp_dataset_dir, exist_ok=True)
-            
-            # Sao chép file vào thư mục dataset
-            temp_input_file = os.path.join(temp_dataset_dir, base_name)
-            shutil.copy(input_file_path, temp_input_file)
-            
-            # Thiết lập tham số để trích xuất F0
-            cmd = [
-                sys.executable,
-                infer_web_path,
-                "--tab", "2",                      # Tab 2 là huấn luyện (bao gồm trích xuất đặc trưng)
-                "--exp_dir1", f"f0_extract_{filename}", # Tên thư mục thí nghiệm
-                "--trainset_dir4", temp_dataset_dir, # Đường dẫn đến dữ liệu input
-                "--sr2", "40k",                    # Tần số lấy mẫu mục tiêu
-                "--if_f0_3", "True",               # Có sử dụng F0 không
-                "--f0method8", f0_method           # Phương pháp tính F0
-            ]
-            
-            logger.info(f"Đang chạy lệnh trích xuất F0: {' '.join(cmd)}")
-            
-            # Thực thi và lấy kết quả
-            original_dir = os.getcwd()
-            try:
-                os.chdir(self.model_dir)
+        # Kết quả
+        results = {}
+        
+        # Kiểm tra các mẫu file vocal
+        for pattern in vocals_patterns:
+            matches = glob.glob(pattern)
+            if matches:
+                # Lấy file mới nhất nếu có nhiều kết quả
+                latest_file = max(matches, key=os.path.getctime)
+                logger.info(f"Tìm thấy file vocal: {latest_file}")
+                results['vocals'] = latest_file
+                break
                 
-                process = subprocess.Popen(
-                    cmd,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    text=True
-                )
-                stdout, stderr = process.communicate()
-                
-                # Log kết quả
-                logger.info(f"Kết quả từ quá trình trích xuất F0: {stdout}")
-                if stderr:
-                    logger.error(f"Lỗi từ quá trình trích xuất F0: {stderr}")
-                
-                if process.returncode != 0:
-                    logger.error(f"Lỗi khi trích xuất F0, mã trả về: {process.returncode}")
-                    return None
-            finally:
-                os.chdir(original_dir)
-            
-            # Tìm file F0 được trích xuất
-            f0_output_dir = os.path.join(self.logs_dir, f"f0_extract_{filename}")
-            f0_file_path = None
-            
-            if os.path.exists(f0_output_dir):
-                # Tìm file .npy chứa thông tin F0
-                for root, dirs, files in os.walk(f0_output_dir):
-                    for file in files:
-                        if file.endswith("_f0.npy"):
-                            f0_file_path = os.path.join(root, file)
-                            break
-                    if f0_file_path:
+        # Kiểm tra các mẫu file instrumental
+        for pattern in instrumental_patterns:
+            matches = glob.glob(pattern)
+            if matches:
+                # Lấy file mới nhất nếu có nhiều kết quả
+                latest_file = max(matches, key=os.path.getctime)
+                logger.info(f"Tìm thấy file instrumental: {latest_file}")
+                results['instrumental'] = latest_file
+                break
+        
+        # Nếu không tìm thấy, kiểm tra tất cả các file trong thư mục
+        if 'vocals' not in results:
+            logger.info(f"Kiểm tra tất cả file trong thư mục: {vocals_dir}")
+            for root, _, files in os.walk(vocals_dir):
+                for file in files:
+                    if filename in file and file.endswith(".wav"):
+                        results['vocals'] = os.path.join(root, file)
+                        logger.info(f"Đã tìm thấy file vocals: {results['vocals']}")
+                        break
+        
+        if 'instrumental' not in results:
+            logger.info(f"Kiểm tra tất cả file trong thư mục: {instrumental_dir}")
+            for root, _, files in os.walk(instrumental_dir):
+                for file in files:
+                    if filename in file and file.endswith(".wav"):
+                        results['instrumental'] = os.path.join(root, file)
+                        logger.info(f"Đã tìm thấy file instrumental: {results['instrumental']}")
                         break
             
-            # Nếu tìm thấy, sao chép vào thư mục kết quả
-            if f0_file_path:
-                shutil.copy(f0_file_path, output_file)
-                
-                # Xóa thư mục tạm
-                shutil.rmtree(temp_dataset_dir, ignore_errors=True)
-                
-                logger.info(f"Đã trích xuất F0 thành công: {output_file}")
-                return output_file
-            else:
-                logger.error(f"Không tìm thấy file F0 sau khi trích xuất.")
-                return None
-                
-        except Exception as e:
-            logger.exception(f"Lỗi khi trích xuất F0: {str(e)}")
-            logger.error(traceback.format_exc())
-            return None
-        finally:
-            # Đảm bảo xóa thư mục tạm nếu còn tồn tại
-            temp_dataset_dir = os.path.join(self.output_dir, f"temp_dataset_{filename}")
-            if os.path.exists(temp_dataset_dir):
-                shutil.rmtree(temp_dataset_dir, ignore_errors=True)
+        return results
     
     def _find_model_path(self, target_voice):
         """Tìm đường dẫn đến model dựa trên tên target voice"""
@@ -493,7 +444,7 @@ class RVCController:
                 
         # Nếu không tìm thấy, tìm kiếm trong weights
         if not model_path:
-            weights_dir = os.path.join(self.model_dir, 'weights')
+            weights_dir = os.path.join(self.model_dir, 'assets', 'weights')
             if os.path.exists(weights_dir):
                 for path in [
                     os.path.join(weights_dir, f"{target_voice}.pth"),
@@ -536,7 +487,8 @@ class RVCController:
                     for item in os.listdir(dir_path):
                         if item.endswith('.pth'):
                             voice_name = os.path.splitext(item)[0]
-                            if voice_name not in voices:
+                            # Loại bỏ sample_model khỏi danh sách
+                            if voice_name not in voices and voice_name != "sample_model":
                                 voices.append(voice_name)
             
             # Nếu không tìm thấy giọng nói nào, thêm giọng nói mặc định
@@ -680,7 +632,7 @@ class RVCController:
                 return None
                 
             # Tạo thư mục đầu ra cho ONNX
-            onnx_output_dir = os.path.join(self.output_dir, f"{model_name}_onnx")
+            onnx_output_dir = os.path.join(self.results_dir, f"{model_name}_onnx")
             os.makedirs(onnx_output_dir, exist_ok=True)
             
             # Gọi trực tiếp đến infer-web.py với tab xuất ONNX
@@ -772,7 +724,7 @@ class RVCController:
                 return None
                 
             # Tạo thư mục đầu ra
-            output_dir = os.path.join(self.output_dir, f"batch_{target_voice}_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}")
+            output_dir = os.path.join(self.results_dir, f"batch_{target_voice}_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}")
             os.makedirs(output_dir, exist_ok=True)
             
             # Gọi trực tiếp đến infer-web.py với tab batch inference
@@ -1139,4 +1091,58 @@ class RVCController:
         except Exception as e:
             logger.exception(f"Lỗi khi trích xuất mô hình nhỏ: {str(e)}")
             logger.error(traceback.format_exc())
-            return None 
+            return None
+
+    def list_uvr_models(self):
+        """
+        Liệt kê các model UVR5 có sẵn
+        
+        Returns:
+            list: Danh sách tên các model UVR5 có sẵn
+        """
+        models = []
+        uvr_weights_dir = os.path.join(self.model_dir, 'assets', 'uvr5_weights')
+        
+        if not os.path.exists(uvr_weights_dir):
+            logger.error(f"Không tìm thấy thư mục UVR5 weights: {uvr_weights_dir}")
+            return models
+            
+        try:
+            # Liệt kê các file .pth trong thư mục weights
+            for file in os.listdir(uvr_weights_dir):
+                if file.endswith('.pth'):
+                    # Chỉ lấy tên file không có phần mở rộng
+                    model_name = os.path.splitext(file)[0]
+                    models.append(model_name)
+                    
+            return models
+        except Exception as e:
+            logger.exception(f"Lỗi khi liệt kê model UVR5: {str(e)}")
+            return models
+            
+    def _get_uvr_model_type(self, model_name):
+        """
+        Xác định loại model UVR5 dựa trên tên file
+        
+        Args:
+            model_name (str): Tên file model
+            
+        Returns:
+            str: Loại model ('vocals', 'instrumental', 'echo', 'reverb')
+        """
+        if 'HP2' in model_name or 'HP3' in model_name or 'HP5' in model_name:
+            if 'only_main_vocal' in model_name:
+                return 'main_vocal'
+            elif 'all_vocals' in model_name:
+                return 'all_vocals'
+            else:
+                return 'vocals'
+        elif 'DeEcho' in model_name:
+            if 'DeReverb' in model_name:
+                return 'echo_reverb'
+            elif 'Aggressive' in model_name:
+                return 'echo_aggressive'
+            else:
+                return 'echo'
+        else:
+            return 'unknown' 

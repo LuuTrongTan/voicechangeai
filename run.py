@@ -27,6 +27,15 @@ def run_command(command, cwd=None, shell=True):
     except subprocess.CalledProcessError as e:
         return False, e.stderr
 
+def check_nodemon_installed():
+    """Kiểm tra nodemon đã được cài đặt chưa"""
+    try:
+        result = subprocess.run("npm list -g nodemon", 
+                               shell=True, capture_output=True, text=True)
+        return "nodemon" in result.stdout
+    except:
+        return False
+
 def main():
     # Đường dẫn thư mục
     root_dir = Path(__file__).parent
@@ -77,13 +86,19 @@ def main():
     # Chạy backend
     print_colored("\n=== ĐANG KHỞI ĐỘNG BACKEND ===", Colors.YELLOW)
     backend_app = backend_dir / "app.py"
+    
+    # Thiết lập encoding cho backend để tránh lỗi Unicode
+    if platform.system() == "Windows":
+        os.environ["PYTHONIOENCODING"] = "utf-8"
+    
     backend_process = subprocess.Popen(
         [python_cmd, str(backend_app)], 
-        cwd=str(backend_dir)
+        cwd=str(backend_dir),
+        env=os.environ.copy()
     )
     
     # Chờ backend khởi động
-    time.sleep(2)
+    time.sleep(5)
     print_colored("✅ Backend đã được khởi động!", Colors.GREEN)
     
     # Chạy frontend nếu ở chế độ dev
@@ -91,21 +106,43 @@ def main():
     if run_mode == "dev":
         print_colored("\n=== ĐANG KHỞI ĐỘNG FRONTEND ===", Colors.YELLOW)
         
+        # Kiểm tra xem nodemon đã cài đặt chưa
+        nodemon_installed = check_nodemon_installed()
+        if not nodemon_installed:
+            print_colored("Nodemon chưa được cài đặt. Đang cài đặt...", Colors.YELLOW)
+            success, output = run_command("npm install -g nodemon", shell=True)
+            if not success:
+                print_colored("Không thể cài đặt nodemon. Sử dụng npm start thay thế.", Colors.RED)
+                nodemon_installed = False
+            else:
+                print_colored("✅ Đã cài đặt nodemon thành công!", Colors.GREEN)
+                nodemon_installed = True
+        
         # Khởi động frontend development server
         if platform.system() == "Windows":
+            if nodemon_installed:
+                frontend_cmd = "nodemon -w src --exec \"npm run start-win\""
+            else:
+                frontend_cmd = "npm run start-win"
+                
             frontend_process = subprocess.Popen(
-                "npm start", 
+                frontend_cmd, 
                 cwd=str(frontend_dir),
                 shell=True
             )
         else:
+            if nodemon_installed:
+                frontend_cmd = ["nodemon", "-w", "src", "--exec", "npm run start"]
+            else:
+                frontend_cmd = ["npm", "run", "start"]
+                
             frontend_process = subprocess.Popen(
-                ["npm", "start"], 
+                frontend_cmd, 
                 cwd=str(frontend_dir)
             )
             
         # Chờ frontend khởi động
-        time.sleep(3)
+        time.sleep(5)
         print_colored("✅ Frontend đã được khởi động!", Colors.GREEN)
         
         print_colored("\nTruy cập Frontend: http://localhost:3000", Colors.CYAN)

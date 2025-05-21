@@ -4,7 +4,8 @@ import {
   Grid, FormControl, InputLabel, Select, MenuItem,
   CircularProgress, Alert, IconButton, Slider, Card,
   CardContent, TextField, Divider, Tabs, Tab,
-  FormControlLabel, Radio, RadioGroup, Switch
+  FormControlLabel, Radio, RadioGroup, Switch,
+  List, ListItem, ListItemIcon, ListItemText, ListItemSecondaryAction
 } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AudioFileIcon from '@mui/icons-material/AudioFile';
@@ -20,6 +21,8 @@ import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 import FolderZipIcon from '@mui/icons-material/FolderZip';
 import FolderIcon from '@mui/icons-material/Folder';
 import SaveIcon from '@mui/icons-material/Save';
+import HistoryIcon from '@mui/icons-material/History';
+import MicOffIcon from '@mui/icons-material/MicOff';
 import { VoiceAPI } from '../../services/api';
 
 // TabPanel component để hiển thị nội dung tab
@@ -43,9 +46,173 @@ function TabPanel(props) {
   );
 }
 
+// Component hiển thị lịch sử chuyển đổi RVC
+const RVCConversionHistory = () => {
+  const [history, setHistory] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const fetchHistory = async () => {
+    setLoading(true);
+    try {
+      const response = await VoiceAPI.rvc.getConversionHistory();
+      setHistory(response.data);
+      setError('');
+    } catch (err) {
+      console.error('Lỗi khi lấy lịch sử chuyển đổi RVC:', err);
+      setError('Không thể lấy lịch sử chuyển đổi RVC');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory();
+  }, []);
+
+  const formatDate = (timestamp) => {
+    return new Date(timestamp * 1000).toLocaleString('vi-VN');
+  };
+
+  if (loading) return <CircularProgress />;
+  if (error) return <Typography color="error">{error}</Typography>;
+  if (history.length === 0) return <Typography>Chưa có lịch sử chuyển đổi RVC</Typography>;
+
+  return (
+    <List>
+      {history.map((item, index) => (
+        <React.Fragment key={index}>
+          <ListItem>
+            <ListItemIcon>
+              <AudioFileIcon />
+            </ListItemIcon>
+            <ListItemText 
+              primary={`${item.source_file} → ${typeof item.target_voice === 'string' ? item.target_voice.split('/').pop() : item.target_voice}`}
+              secondary={
+                <Box>
+                  <Typography variant="body2" color="textSecondary">
+                    {formatDate(item.timestamp)}
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary">
+                    F0 Key: {item.params?.f0up_key || 0}, 
+                    Index Rate: {item.params?.index_rate || 0.5},
+                    Protect: {item.params?.protect || 0.33}
+                  </Typography>
+                </Box>
+              }
+            />
+            <ListItemSecondaryAction>
+              <IconButton edge="end" onClick={() => VoiceAPI.downloadResult(item.result_url)}>
+                <DownloadIcon />
+              </IconButton>
+              <IconButton edge="end" onClick={() => VoiceAPI.playAudioFile(item.result_url)}>
+                <VolumeUpIcon />
+              </IconButton>
+            </ListItemSecondaryAction>
+          </ListItem>
+          {index < history.length - 1 && <Divider />}
+        </React.Fragment>
+      ))}
+    </List>
+  );
+};
+
+// Component hiển thị lịch sử tách giọng UVR
+const UVRHistory = () => {
+  const [history, setHistory] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const fetchHistory = async () => {
+    setLoading(true);
+    try {
+      const response = await VoiceAPI.rvc.getUvrHistory();
+      setHistory(response.data);
+      setError('');
+    } catch (err) {
+      console.error('Lỗi khi lấy lịch sử tách giọng UVR:', err);
+      setError('Không thể lấy lịch sử tách giọng UVR');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchHistory();
+  }, []);
+
+  const formatDate = (timestamp) => {
+    return new Date(timestamp * 1000).toLocaleString('vi-VN');
+  };
+
+  if (loading) return <CircularProgress />;
+  if (error) return <Typography color="error">{error}</Typography>;
+  if (history.length === 0) return <Typography>Chưa có lịch sử tách giọng UVR</Typography>;
+
+  return (
+    <List>
+      {history.map((item, index) => (
+        <React.Fragment key={index}>
+          <ListItem>
+            <ListItemIcon>
+              <MicOffIcon />
+            </ListItemIcon>
+            <ListItemText 
+              primary={`${item.source_file} - ${item.model_name}`}
+              secondary={formatDate(item.timestamp)}
+            />
+            <ListItemSecondaryAction>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Typography variant="body2" sx={{ mr: 1 }}>Vocals:</Typography>
+                <IconButton edge="end" onClick={() => VoiceAPI.downloadResult(item.vocals_url)}>
+                  <DownloadIcon />
+                </IconButton>
+                <IconButton edge="end" onClick={() => VoiceAPI.playAudioFile(item.vocals_url)}>
+                  <VolumeUpIcon />
+                </IconButton>
+              </Box>
+              <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                <Typography variant="body2" sx={{ mr: 1 }}>Instrumental:</Typography>
+                <IconButton edge="end" onClick={() => VoiceAPI.downloadResult(item.instrumental_url)}>
+                  <DownloadIcon />
+                </IconButton>
+                <IconButton edge="end" onClick={() => VoiceAPI.playAudioFile(item.instrumental_url)}>
+                  <VolumeUpIcon />
+                </IconButton>
+              </Box>
+            </ListItemSecondaryAction>
+          </ListItem>
+          {index < history.length - 1 && <Divider />}
+        </React.Fragment>
+      ))}
+    </List>
+  );
+};
+
+// Mapping tên mô hình UVR sang tiếng Việt thân thiện
+const uvrModelDisplayName = (model) => {
+  if (model.startsWith('HP5_only_main_vocal')) return 'HP5 (Tách giọng hát chính, nhạc nền phức tạp) (' + model + ')';
+  if (model.startsWith('HP5')) return 'HP5 (Tách nhiều loại, nhạc nền phức tạp) (' + model + ')';
+  if (model.startsWith('HP3')) return 'HP3 (Tách tất cả giọng nói, nhạc nền đơn giản) (' + model + ')';
+  if (model.startsWith('HP2_all_vocals')) return 'HP2 (Tách tất cả giọng nói, tốt cho nhạc nền đơn giản) (' + model + ')';
+  if (model.startsWith('HP2-')) return 'HP2 (Tách giọng người/không phải người, nhạc nền đơn giản) (' + model + ')';
+  if (model.startsWith('VR-DeEchoNormal')) return 'DeEcho Bình thường (Khử vang nhẹ) (' + model + ')';
+  if (model.startsWith('VR-DeEchoAggressive')) return 'DeEcho Mạnh (Khử vang mạnh) (' + model + ')';
+  if (model.startsWith('HP5_only_main_vocal')) return 'HP5 (Tách giọng chính) (' + model + ')';
+  if (model.startsWith('HP5')) return 'HP5 (Tách nhiều loại) (' + model + ')';
+  if (model.startsWith('HP3')) return 'HP3 (Tách tất cả giọng nói) (' + model + ')';
+  if (model.startsWith('HP2')) return 'HP2 (Tách tất cả giọng nói) (' + model + ')';
+  if (model.startsWith('VR-DeEchoNormal')) return 'DeEcho Bình thường (' + model + ')';
+  if (model.startsWith('VR-DeEchoAggressive')) return 'DeEcho Mạnh (' + model + ')';
+  if (model.startsWith('VR-DeEchoDeReverb')) return 'DeEcho + Khử vang (' + model + ')';
+  return model;
+};
+
 const RVCTab = () => {
   // State cho tab navigation - theo infer-web.py
   const [activeTab, setActiveTab] = useState(0);
+  // State mới cho tab lịch sử
+  const [historyTab, setHistoryTab] = useState(0);
 
   // State cho mô hình
   const [availableVoices, setAvailableVoices] = useState([]);
@@ -109,12 +276,30 @@ const RVCTab = () => {
   // Refs cho audio players
   const sourceAudioRef = useRef(null);
   const resultAudioRef = useRef(null);
+  const vocalsAudioRef = useRef(null);
+  const instrumentalAudioRef = useRef(null);
+  const uvrSourceAudioRef = useRef(null); // Thêm ref cho file UVR source
 
+  // Thêm state để quản lý việc phát âm thanh và vị trí phát
+  const [audioProgress, setAudioProgress] = useState(0);
+  const [audioDuration, setAudioDuration] = useState(0);
+  const [vocalsProgress, setVocalsProgress] = useState(0);
+  const [vocalsDuration, setVocalsDuration] = useState(0);
+  const [instrumentalProgress, setInstrumentalProgress] = useState(0);
+  const [instrumentalDuration, setInstrumentalDuration] = useState(0);
+  const [uvrSourceProgress, setUvrSourceProgress] = useState(0); // Thêm state cho progress
+  const [uvrSourceDuration, setUvrSourceDuration] = useState(0); // Thêm state cho duration
+  
+  // Thêm state để quản lý việc phát vocals và instrumental
+  const [isVocalsPlaying, setIsVocalsPlaying] = useState(false);
+  const [isInstrumentalPlaying, setIsInstrumentalPlaying] = useState(false);
+  const [isUvrSourcePlaying, setIsUvrSourcePlaying] = useState(false); // Thêm state cho phát UVR source
+  
   // Tải danh sách model và index paths khi component mount
   useEffect(() => {
     const loadModelsAndIndices = async () => {
       try {
-        // Tải danh sách model
+        // Tải danh sách model RVC
         const response = await VoiceAPI.rvc.getModels();
         if (response.data && response.data.models) {
           const voices = response.data.models;
@@ -125,7 +310,6 @@ const RVCTab = () => {
             setError('Không tìm thấy mô hình RVC nào.');
           }
         }
-        
         // Tải danh sách index files
         if (response.data && response.data.indices) {
           const indices = response.data.indices;
@@ -134,13 +318,13 @@ const RVCTab = () => {
             setSelectedIndex(indices[0]);
           }
         }
-        
-        // Tải danh sách model UVR
-        if (response.data && response.data.uvr_models) {
-          const uvrModelList = response.data.uvr_models;
-          setUvrModels(uvrModelList);
-          if (uvrModelList.length > 0) {
-            setSelectedUvrModel(uvrModelList[0]);
+        // Tải danh sách model UVR5 từ API riêng biệt
+        const uvrResponse = await fetch('http://localhost:5000/api/uvr/models');
+        const uvrData = await uvrResponse.json();
+        if (uvrData && uvrData.success && uvrData.models) {
+          setUvrModels(uvrData.models);
+          if (uvrData.models.length > 0) {
+            setSelectedUvrModel(uvrData.models[0]);
           }
         }
       } catch (err) {
@@ -150,7 +334,6 @@ const RVCTab = () => {
         setIsModelLoading(false);
       }
     };
-
     loadModelsAndIndices();
   }, []);
 
@@ -193,6 +376,13 @@ const RVCTab = () => {
     const file = event.target.files[0];
     if (file) {
       if (file.type.includes('audio') || file.name.match(/\.(wav|mp3|flac|ogg)$/)) {
+        // Dừng phát âm thanh nếu đang phát
+        if (uvrSourceAudioRef.current) {
+          uvrSourceAudioRef.current.pause();
+          uvrSourceAudioRef.current = null;
+          setIsUvrSourcePlaying(false);
+        }
+        
         setUvrFile(file);
         setUvrResult(null);
         setError('');
@@ -240,7 +430,7 @@ const RVCTab = () => {
     }
   };
 
-  // Xử lý phát/dừng âm thanh kết quả
+  // Xử lý phát/dừng âm thanh kết quả với thanh tua
   const handlePlayResultAudio = () => {
     if (!result || !result.result_url) {
       setError('Không có kết quả để phát');
@@ -255,8 +445,30 @@ const RVCTab = () => {
       }
     } else {
       // Nếu chưa phát thì tạo và phát
-      const audio = new Audio(result.result_url);
+      // Thêm domain của backend nếu URL là tương đối
+      let audioUrl = result.result_url;
+      if (audioUrl.startsWith('/')) {
+        audioUrl = `http://localhost:5000${audioUrl}`;
+      }
+      
+      // Thêm timestamp vào URL để tránh cache
+      audioUrl = `${audioUrl}${audioUrl.includes('?') ? '&' : '?'}t=${Date.now()}`;
+      
+      const audio = new Audio(audioUrl);
+      
+      // Lắng nghe sự kiện metadata để lấy thời lượng audio
+      audio.onloadedmetadata = () => {
+        setAudioDuration(audio.duration);
+      };
+      
+      // Lắng nghe sự kiện timeupdate để cập nhật tiến trình
+      audio.ontimeupdate = () => {
+        setAudioProgress(audio.currentTime);
+      };
+      
+      // Xử lý sự kiện khi phát xong
       audio.onended = () => {
+        setAudioProgress(0);
         setIsResultPlaying(false);
         resultAudioRef.current = null;
       };
@@ -275,7 +487,42 @@ const RVCTab = () => {
   // Xử lý tải xuống kết quả
   const handleDownload = (url) => {
     if (url) {
-      VoiceAPI.downloadResult(url);
+      // Thêm domain của backend nếu URL là tương đối
+      let downloadUrl = url;
+      if (downloadUrl.startsWith('/')) {
+        downloadUrl = `http://localhost:5000${downloadUrl}`;
+      }
+      
+      // Debug log
+      console.log("DEBUG - URL download hoàn chỉnh:", downloadUrl);
+      
+      // Kiểm tra URL bằng cách tạo yêu cầu fetch trước
+      fetch(downloadUrl, { method: 'HEAD' })
+        .then(response => {
+          if (response.ok) {
+            // Nếu URL tồn tại, tiến hành tải xuống
+            VoiceAPI.downloadResult(downloadUrl);
+          } else {
+            // Nếu URL không tồn tại, thử thay đổi URL
+            if (downloadUrl.includes('vocals_')) {
+              const altUrl = downloadUrl.replace('vocals_', 'vocal_');
+              console.log("DEBUG - Thử URL download thay thế cho vocals:", altUrl);
+              VoiceAPI.downloadResult(altUrl);
+            } 
+            else if (downloadUrl.includes('instrumental_')) {
+              const altUrl = downloadUrl.replace('instrumental_', 'instrument_');
+              console.log("DEBUG - Thử URL download thay thế cho instrumental:", altUrl);
+              VoiceAPI.downloadResult(altUrl);
+            }
+            else {
+              setError('Không thể tải xuống file. URL không tồn tại.');
+            }
+          }
+        })
+        .catch(error => {
+          console.error('Lỗi kiểm tra URL download:', error);
+          setError('Lỗi kiểm tra URL download. Vui lòng thử lại.');
+        });
     } else {
       setError('Không có kết quả để tải xuống');
     }
@@ -328,7 +575,7 @@ const RVCTab = () => {
         console.log('Đã nhận kết quả:', response.data);
     } else {
         setError(`Chuyển đổi thất bại: ${response.data.error || 'Lỗi không xác định'}`);
-      }
+    }
     } catch (err) {
       console.error('Lỗi khi chuyển đổi giọng nói:', err);
       if (err.response && err.response.data && err.response.data.error) {
@@ -340,7 +587,7 @@ const RVCTab = () => {
       setIsConverting(false);
     }
   };
-
+  
   // Xử lý khi người dùng nhấn nút xử lý hàng loạt (batch)
   const handleBatchConvert = async () => {
     if (!batchInputDir) {
@@ -401,7 +648,7 @@ const RVCTab = () => {
       setIsBatchProcessing(false);
     }
   };
-
+  
   // Xử lý khi người dùng nhấn nút tách vocals (UVR)
   const handleSeparateVocals = async () => {
     if (!uvrFile) {
@@ -415,7 +662,7 @@ const RVCTab = () => {
     }
     
     setIsUvrProcessing(true);
-        setError('');
+    setError('');
     setUvrResult(null);
     
     try {
@@ -423,8 +670,8 @@ const RVCTab = () => {
       const formData = new FormData();
       formData.append('audio', uvrFile);
       formData.append('model', selectedUvrModel);
-      formData.append('vocal_output', vocalOutputDir);
-      formData.append('instrumental_output', instrumentalOutputDir);
+      formData.append('vocal_output', 'opt');
+      formData.append('instrumental_output', 'opt');
       
       // Gửi request lên server
       const response = await VoiceAPI.rvc.separateVocals(uvrFile, selectedUvrModel);
@@ -444,6 +691,150 @@ const RVCTab = () => {
       }
     } finally {
       setIsUvrProcessing(false);
+    }
+  };
+
+  // Phát file âm thanh vocals với khả năng pause và thanh tua
+  const handlePlayVocals = () => {
+    if (!uvrResult || !uvrResult.vocals_url) {
+      setError('Không có file vocals để phát');
+      return;
+    }
+
+    // Dừng phát instrumental nếu đang phát
+    if (instrumentalAudioRef.current) {
+      instrumentalAudioRef.current.pause();
+      setIsInstrumentalPlaying(false);
+    }
+    
+    if (isVocalsPlaying) {
+      // Nếu đang phát thì dừng lại
+      if (vocalsAudioRef.current) {
+        vocalsAudioRef.current.pause();
+        setIsVocalsPlaying(false);
+      }
+    } else {
+      // Nếu chưa phát thì tạo và phát
+      // Thêm domain của backend nếu URL là tương đối
+      let audioUrl = uvrResult.vocals_url;
+      if (audioUrl.startsWith('/')) {
+        audioUrl = `http://localhost:5000${audioUrl}`;
+      }
+      
+      // Thêm timestamp vào URL để tránh cache
+      audioUrl = `${audioUrl}${audioUrl.includes('?') ? '&' : '?'}t=${Date.now()}`;
+      
+      const audio = new Audio(audioUrl);
+      
+      // Lắng nghe sự kiện metadata để lấy thời lượng audio
+      audio.onloadedmetadata = () => {
+        setVocalsDuration(audio.duration);
+      };
+      
+      // Lắng nghe sự kiện timeupdate để cập nhật tiến trình
+      audio.ontimeupdate = () => {
+        setVocalsProgress(audio.currentTime);
+      };
+      
+      // Xử lý sự kiện khi phát xong
+      audio.onended = () => {
+        setVocalsProgress(0);
+        setIsVocalsPlaying(false);
+        vocalsAudioRef.current = null;
+      };
+      
+      vocalsAudioRef.current = audio;
+      audio.play()
+        .then(() => setIsVocalsPlaying(true))
+        .catch(error => {
+          console.error('Lỗi khi phát file vocals:', error);
+          setError('Không thể phát file vocals. Vui lòng thử lại.');
+          setIsVocalsPlaying(false);
+        });
+    }
+  };
+
+  // Phát file âm thanh instrumental với khả năng pause và thanh tua
+  const handlePlayInstrumental = () => {
+    if (!uvrResult || !uvrResult.instrumental_url) {
+      setError('Không có file instrumental để phát');
+      return;
+    }
+
+    // Dừng phát vocals nếu đang phát
+    if (vocalsAudioRef.current) {
+      vocalsAudioRef.current.pause();
+      setIsVocalsPlaying(false);
+    }
+    
+    if (isInstrumentalPlaying) {
+      // Nếu đang phát thì dừng lại
+      if (instrumentalAudioRef.current) {
+        instrumentalAudioRef.current.pause();
+        setIsInstrumentalPlaying(false);
+      }
+    } else {
+      // Nếu chưa phát thì tạo và phát
+      // Thêm domain của backend nếu URL là tương đối
+      let audioUrl = uvrResult.instrumental_url;
+      if (audioUrl.startsWith('/')) {
+        audioUrl = `http://localhost:5000${audioUrl}`;
+      }
+      
+      // Thêm timestamp vào URL để tránh cache
+      audioUrl = `${audioUrl}${audioUrl.includes('?') ? '&' : '?'}t=${Date.now()}`;
+      
+      const audio = new Audio(audioUrl);
+      
+      // Lắng nghe sự kiện metadata để lấy thời lượng audio
+      audio.onloadedmetadata = () => {
+        setInstrumentalDuration(audio.duration);
+      };
+      
+      // Lắng nghe sự kiện timeupdate để cập nhật tiến trình
+      audio.ontimeupdate = () => {
+        setInstrumentalProgress(audio.currentTime);
+      };
+      
+      // Xử lý sự kiện khi phát xong
+      audio.onended = () => {
+        setInstrumentalProgress(0);
+        setIsInstrumentalPlaying(false);
+        instrumentalAudioRef.current = null;
+      };
+      
+      instrumentalAudioRef.current = audio;
+      audio.play()
+        .then(() => setIsInstrumentalPlaying(true))
+        .catch(error => {
+          console.error('Lỗi khi phát file instrumental:', error);
+          setError('Không thể phát file instrumental. Vui lòng thử lại.');
+          setIsInstrumentalPlaying(false);
+        });
+    }
+  };
+
+  // Xử lý khi người dùng tua audio kết quả
+  const handleAudioSeek = (event, newValue) => {
+    setAudioProgress(newValue);
+    if (resultAudioRef.current) {
+      resultAudioRef.current.currentTime = newValue;
+    }
+  };
+  
+  // Xử lý khi người dùng tua audio vocals
+  const handleVocalsSeek = (event, newValue) => {
+    setVocalsProgress(newValue);
+    if (vocalsAudioRef.current) {
+      vocalsAudioRef.current.currentTime = newValue;
+    }
+  };
+  
+  // Xử lý khi người dùng tua audio instrumental
+  const handleInstrumentalSeek = (event, newValue) => {
+    setInstrumentalProgress(newValue);
+    if (instrumentalAudioRef.current) {
+      instrumentalAudioRef.current.currentTime = newValue;
     }
   };
 
@@ -507,27 +898,83 @@ const RVCTab = () => {
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
+  
+  // Xử lý chuyển đổi tab lịch sử
+  const handleHistoryTabChange = (event, newValue) => {
+    setHistoryTab(newValue);
+  };
+
+  // Thêm hàm xử lý phát/dừng audio source UVR
+  const handlePlayUvrSourceAudio = () => {
+    if (!uvrFile) {
+      setError('Không có file âm thanh để phát');
+      return;
+    }
+    
+    if (isUvrSourcePlaying) {
+      // Nếu đang phát thì dừng lại
+      if (uvrSourceAudioRef.current) {
+        uvrSourceAudioRef.current.pause();
+        setIsUvrSourcePlaying(false);
+      }
+    } else {
+      // Nếu chưa phát thì tạo và phát
+      const fileUrl = URL.createObjectURL(uvrFile);
+      const audio = new Audio(fileUrl);
+      
+      // Lắng nghe sự kiện metadata để lấy thời lượng audio
+      audio.onloadedmetadata = () => {
+        setUvrSourceDuration(audio.duration);
+      };
+      
+      // Lắng nghe sự kiện timeupdate để cập nhật tiến trình
+      audio.ontimeupdate = () => {
+        setUvrSourceProgress(audio.currentTime);
+      };
+      
+      // Xử lý sự kiện khi phát xong
+      audio.onended = () => {
+        setUvrSourceProgress(0);
+        setIsUvrSourcePlaying(false);
+        uvrSourceAudioRef.current = null;
+        URL.revokeObjectURL(fileUrl);
+      };
+      
+      uvrSourceAudioRef.current = audio;
+      audio.play()
+        .then(() => setIsUvrSourcePlaying(true))
+        .catch(error => {
+          console.error('Lỗi khi phát âm thanh nguồn UVR:', error);
+          setError('Không thể phát âm thanh. Vui lòng thử lại.');
+          setIsUvrSourcePlaying(false);
+          URL.revokeObjectURL(fileUrl);
+        });
+    }
+  };
+  
+  // Thêm hàm xử lý khi người dùng tua audio UVR source
+  const handleUvrSourceSeek = (event, newValue) => {
+    setUvrSourceProgress(newValue);
+    if (uvrSourceAudioRef.current) {
+      uvrSourceAudioRef.current.currentTime = newValue;
+    }
+  };
 
   return (
     <Box sx={{ width: '100%' }}>
-      <Paper elevation={3} sx={{ p: 1, mb: 2 }}>
-        <Tabs 
-          value={activeTab} 
-          onChange={handleTabChange} 
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="RVC options tabs"
-        >
-          <Tab label="Đơn lẻ" icon={<SettingsVoiceIcon />} />
-          <Tab label="Hàng loạt" icon={<FolderIcon />} />
-          <Tab label="UVR" icon={<MusicNoteIcon />} />
-          <Tab label="Huấn luyện" icon={<BuildIcon />} />
-          <Tab label="Xử lý mô hình" icon={<DeviceHubIcon />} />
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs value={activeTab} onChange={handleTabChange} aria-label="RVC tabs">
+          <Tab icon={<AudioFileIcon />} label="Chuyển đổi" id="rvc-tab-0" aria-controls="rvc-tabpanel-0" />
+          <Tab icon={<FolderZipIcon />} label="Batch" id="rvc-tab-1" aria-controls="rvc-tabpanel-1" />
+          <Tab icon={<MicOffIcon />} label="Tách giọng" id="rvc-tab-2" aria-controls="rvc-tabpanel-2" />
+          <Tab icon={<BuildIcon />} label="Huấn luyện" id="rvc-tab-3" aria-controls="rvc-tabpanel-3" />
+          <Tab icon={<DeviceHubIcon />} label="Tools" id="rvc-tab-4" aria-controls="rvc-tabpanel-4" />
+          <Tab icon={<HistoryIcon />} label="Lịch sử" id="rvc-tab-5" aria-controls="rvc-tabpanel-5" />
         </Tabs>
-      </Paper>
-        
-      {/* Tab 1: Chuyển đổi giọng nói đơn lẻ */}
-        <TabPanel value={activeTab} index={0}>
+      </Box>
+      
+      {/* Tab Chuyển đổi đơn lẻ */}
+      <TabPanel value={activeTab} index={0}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Paper elevation={2} sx={{ p: 2 }}>
@@ -828,6 +1275,25 @@ const RVCTab = () => {
                 </Box>
               </Box>
               
+            {/* Thêm thanh tua cho audio kết quả */}
+            {audioDuration > 0 && (
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Typography variant="body2" sx={{ minWidth: '70px' }}>
+                  {Math.floor(audioProgress / 60)}:{Math.floor(audioProgress % 60).toString().padStart(2, '0')} / 
+                  {Math.floor(audioDuration / 60)}:{Math.floor(audioDuration % 60).toString().padStart(2, '0')}
+                </Typography>
+                <Box sx={{ flex: 1, mx: 2 }}>
+                  <Slider
+                    size="small"
+                    value={audioProgress}
+                    max={audioDuration || 100}
+                    onChange={handleAudioSeek}
+                    aria-label="Vị trí audio"
+                  />
+                </Box>
+              </Box>
+            )}
+            
             <Divider sx={{ mb: 2 }} />
             
             <Grid container spacing={2}>
@@ -855,10 +1321,10 @@ const RVCTab = () => {
               </Grid>
             </Grid>
           </Paper>
-        )}
+                )}
       </TabPanel>
 
-      {/* Tab 2: Xử lý hàng loạt */}
+      {/* Tab Batch processing */}
       <TabPanel value={activeTab} index={1}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -1099,54 +1565,79 @@ const RVCTab = () => {
           )}
         </TabPanel>
         
-      {/* Tab 3: UVR5 - Tách giọng nói */}
+      {/* Tab Tách giọng */}
       <TabPanel value={activeTab} index={2}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Paper elevation={2} sx={{ p: 2 }}>
-          <Typography variant="h6" gutterBottom>
-            Tách giọng nói và nhạc nền (UVR5)
-          </Typography>
-          
-          <Grid container spacing={2} sx={{ mt: 1, mb: 2 }}>
+              <Typography variant="h6" gutterBottom>
+                Tách giọng nói và nhạc nền (UVR5)
+              </Typography>
+              
+              <Grid container spacing={2} sx={{ mt: 1, mb: 2 }}>
                 <Grid item xs={12}>
-              <Button
-                variant="outlined"
-                component="label"
-                startIcon={<CloudUploadIcon />}
-                fullWidth
-                sx={{ height: '56px' }}
-              >
-                Chọn file âm thanh
-                <input
-                  type="file"
-                  accept="audio/*"
-                  hidden
-                  onChange={handleUvrFileChange}
-                />
-              </Button>
-            </Grid>
+                  <Button
+                    variant="outlined"
+                    component="label"
+                    startIcon={<CloudUploadIcon />}
+                    fullWidth
+                    sx={{ height: '56px' }}
+                  >
+                    Chọn file âm thanh
+                    <input
+                      type="file"
+                      accept="audio/*"
+                      hidden
+                      onChange={handleUvrFileChange}
+                    />
+                  </Button>
+                </Grid>
                 <Grid item xs={12}>
-              <Paper variant="outlined" sx={{ p: 1, display: 'flex', alignItems: 'center', height: '56px' }}>
-                {uvrFile ? (
-                  <>
-                    <AudioFileIcon color="primary" sx={{ mx: 1 }} />
-                    <Typography variant="body2" sx={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {uvrFile.name}
-                    </Typography>
-                  </>
-                ) : (
-                  <Typography variant="body2" color="textSecondary" sx={{ mx: 1 }}>
-                    Chưa chọn file nào
+                  <Paper variant="outlined" sx={{ p: 1, display: 'flex', alignItems: 'center', height: '56px' }}>
+                    {uvrFile ? (
+                      <>
+                        <AudioFileIcon color="primary" sx={{ mx: 1 }} />
+                        <Typography variant="body2" sx={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                          {uvrFile.name}
+                        </Typography>
+                        <IconButton 
+                          onClick={handlePlayUvrSourceAudio}
+                          color="primary"
+                        >
+                          {isUvrSourcePlaying ? <StopIcon /> : <PlayCircleOutlineIcon />}
+                        </IconButton>
+                      </>
+                    ) : (
+                      <Typography variant="body2" color="textSecondary" sx={{ mx: 1 }}>
+                        Chưa chọn file nào
+                      </Typography>
+                    )}
+                  </Paper>
+                </Grid>
+              </Grid>
+              
+              {/* Thêm thanh tua cho file âm thanh UVR nguồn */}
+              {uvrSourceDuration > 0 && (
+                <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, mb: 2, px: 1 }}>
+                  <Typography variant="body2" sx={{ minWidth: '70px' }}>
+                    {Math.floor(uvrSourceProgress / 60)}:{Math.floor(uvrSourceProgress % 60).toString().padStart(2, '0')} / 
+                    {Math.floor(uvrSourceDuration / 60)}:{Math.floor(uvrSourceDuration % 60).toString().padStart(2, '0')}
                   </Typography>
-                )}
-              </Paper>
-            </Grid>
-          </Grid>
-          
-          <FormControl fullWidth sx={{ mb: 2 }}>
+                  <Box sx={{ flex: 1, mx: 2 }}>
+                    <Slider
+                      size="small"
+                      value={uvrSourceProgress}
+                      max={uvrSourceDuration || 100}
+                      onChange={handleUvrSourceSeek}
+                      aria-label="Vị trí file nguồn"
+                    />
+                  </Box>
+                </Box>
+              )}
+              
+              <FormControl fullWidth sx={{ mb: 2 }}>
                 <InputLabel>Mô hình UVR</InputLabel>
-            <Select
+                <Select
                   value={selectedUvrModel}
                   onChange={(e) => setSelectedUvrModel(e.target.value)}
                   label="Mô hình UVR"
@@ -1154,7 +1645,7 @@ const RVCTab = () => {
                   {uvrModels.length > 0 ? (
                     uvrModels.map((model) => (
                       <MenuItem key={model} value={model}>
-                        {model}
+                        {uvrModelDisplayName(model)}
                       </MenuItem>
                     ))
                   ) : (
@@ -1162,45 +1653,25 @@ const RVCTab = () => {
                       <em>Không có mô hình UVR5 nào</em>
                     </MenuItem>
                   )}
-            </Select>
-          </FormControl>
-          
-              <TextField
-                fullWidth
-                label="Thư mục đầu ra vocals"
-                variant="outlined"
-                value={vocalOutputDir}
-                onChange={(e) => setVocalOutputDir(e.target.value)}
-                placeholder="Ví dụ: opt"
-                margin="normal"
-              />
+                </Select>
+              </FormControl>
               
-              <TextField
+              <Button
+                variant="contained"
                 fullWidth
-                label="Thư mục đầu ra instrumental"
-                variant="outlined"
-                value={instrumentalOutputDir}
-                onChange={(e) => setInstrumentalOutputDir(e.target.value)}
-                placeholder="Ví dụ: opt"
-                margin="normal"
-              />
-              
-          <Button
-            variant="contained"
-            fullWidth
                 sx={{ mt: 3 }}
-            onClick={handleSeparateVocals}
+                onClick={handleSeparateVocals}
                 disabled={isUvrProcessing || !uvrFile || !selectedUvrModel}
-          >
+              >
                 {isUvrProcessing ? (
-              <>
-                <CircularProgress size={24} sx={{ mr: 1 }} color="inherit" />
-                Đang xử lý...
-              </>
-            ) : (
-              'Tách giọng nói'
-            )}
-          </Button>
+                  <>
+                    <CircularProgress size={24} sx={{ mr: 1 }} color="inherit" />
+                    Đang xử lý...
+                  </>
+                ) : (
+                  'Tách giọng nói'
+                )}
+              </Button>
             </Paper>
           </Grid>
           
@@ -1208,38 +1679,86 @@ const RVCTab = () => {
             {/* Kết quả UVR */}
             {uvrResult ? (
               <Paper elevation={2} sx={{ p: 2 }}>
-              <Typography variant="h6" gutterBottom>
-                Kết quả tách giọng nói
-              </Typography>
-              
-              {uvrResult.vocals_url && (
-                <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 1, bgcolor: 'background.paper', borderRadius: 1 }}>
-                  <Typography>
-                    <strong>Giọng nói (Vocals)</strong>
-                  </Typography>
-                  
-                  <Box>
-                    <IconButton color="primary" onClick={() => handleDownload(uvrResult.vocals_url)}>
-                      <DownloadIcon />
-                    </IconButton>
+                <Typography variant="h6" gutterBottom>
+                  Kết quả tách giọng nói
+                </Typography>
+                
+                {uvrResult.vocals_url && (
+                  <Box sx={{ mt: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 1, bgcolor: 'background.paper', borderRadius: 1 }}>
+                      <Typography>
+                        <strong>Giọng nói (Vocals)</strong>
+                      </Typography>
+                      
+                      <Box>
+                        <IconButton color="primary" onClick={handlePlayVocals} sx={{ mr: 1 }}>
+                          {isVocalsPlaying ? <StopIcon /> : <PlayCircleOutlineIcon />}
+                        </IconButton>
+                        <IconButton color="primary" onClick={() => handleDownload(uvrResult.vocals_url)}>
+                          <DownloadIcon />
+                        </IconButton>
+                      </Box>
+                    </Box>
+                    
+                    {/* Thanh tua cho vocals */}
+                    {vocalsDuration > 0 && (
+                      <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, mb: 2, px: 1 }}>
+                        <Typography variant="body2" sx={{ minWidth: '70px' }}>
+                          {Math.floor(vocalsProgress / 60)}:{Math.floor(vocalsProgress % 60).toString().padStart(2, '0')} / 
+                          {Math.floor(vocalsDuration / 60)}:{Math.floor(vocalsDuration % 60).toString().padStart(2, '0')}
+                        </Typography>
+                        <Box sx={{ flex: 1, mx: 2 }}>
+                          <Slider
+                            size="small"
+                            value={vocalsProgress}
+                            max={vocalsDuration || 100}
+                            onChange={handleVocalsSeek}
+                            aria-label="Vị trí vocals"
+                          />
+                        </Box>
+                      </Box>
+                    )}
                   </Box>
-                </Box>
-              )}
-              
-              {uvrResult.instrumental_url && (
-                <Box sx={{ mt: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 1, bgcolor: 'background.paper', borderRadius: 1 }}>
-                  <Typography>
-                    <strong>Nhạc nền (Instrumental)</strong>
-                  </Typography>
-                  
-                  <Box>
-                    <IconButton color="primary" onClick={() => handleDownload(uvrResult.instrumental_url)}>
-                      <DownloadIcon />
-                    </IconButton>
+                )}
+                
+                {uvrResult.instrumental_url && (
+                  <Box sx={{ mt: 2 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', p: 1, bgcolor: 'background.paper', borderRadius: 1 }}>
+                      <Typography>
+                        <strong>Nhạc nền (Instrumental)</strong>
+                      </Typography>
+                      
+                      <Box>
+                        <IconButton color="primary" onClick={handlePlayInstrumental} sx={{ mr: 1 }}>
+                          {isInstrumentalPlaying ? <StopIcon /> : <PlayCircleOutlineIcon />}
+                        </IconButton>
+                        <IconButton color="primary" onClick={() => handleDownload(uvrResult.instrumental_url)}>
+                          <DownloadIcon />
+                        </IconButton>
+                      </Box>
+                    </Box>
+                    
+                    {/* Thanh tua cho instrumental */}
+                    {instrumentalDuration > 0 && (
+                      <Box sx={{ display: 'flex', alignItems: 'center', mt: 1, mb: 2, px: 1 }}>
+                        <Typography variant="body2" sx={{ minWidth: '70px' }}>
+                          {Math.floor(instrumentalProgress / 60)}:{Math.floor(instrumentalProgress % 60).toString().padStart(2, '0')} / 
+                          {Math.floor(instrumentalDuration / 60)}:{Math.floor(instrumentalDuration % 60).toString().padStart(2, '0')}
+                        </Typography>
+                        <Box sx={{ flex: 1, mx: 2 }}>
+                          <Slider
+                            size="small"
+                            value={instrumentalProgress}
+                            max={instrumentalDuration || 100}
+                            onChange={handleInstrumentalSeek}
+                            aria-label="Vị trí instrumental"
+                          />
+                        </Box>
+                      </Box>
+                    )}
                   </Box>
-                </Box>
-              )}
-            </Paper>
+                )}
+              </Paper>
             ) : (
               <Paper elevation={2} sx={{ p: 2, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <Typography variant="body1" color="textSecondary" align="center">
@@ -1248,7 +1767,7 @@ const RVCTab = () => {
                 <Box sx={{ mt: 2 }}>
                   <Alert severity="info" sx={{ mb: 2 }}>
                     <Typography variant="body2">
-                      <strong>Mẹo:</strong> Các mô hình UVR khác nhau sẽ cho kết quả khác nhau. Mô hình HP5 tốt cho giọng nói chính, HP2/HP3 tốt cho giọng nói không có hòa âm.
+                      <strong>Mẹo:</strong> Các mô hình UVR khác nhau sẽ cho kết quả khác nhau. Mô hình HP5 tốt cho giọng nói chính, HP2/HP3 tốt cho giọng nói không có hòa âm. Vậy nên bạn có thể sử dụng 1 file audio và dùng nhiều model để tách được nhạc và lời mong muốn
                     </Typography>
                   </Alert>
                 </Box>
@@ -1258,7 +1777,7 @@ const RVCTab = () => {
         </Grid>
         </TabPanel>
         
-      {/* Tab 4: Huấn luyện mô hình */}
+      {/* Tab Huấn luyện */}
       <TabPanel value={activeTab} index={3}>
         <Paper elevation={2} sx={{ p: 2 }}>
           <Typography variant="h6" gutterBottom>
@@ -1334,7 +1853,7 @@ const RVCTab = () => {
                   <Switch 
                     checked={ifF0} 
                     onChange={(e) => setIfF0(e.target.checked)}
-                  />
+                />
                 }
                 label="Sử dụng F0 (cần thiết cho hát)"
                 sx={{ mt: 2 }}
@@ -1454,7 +1973,7 @@ const RVCTab = () => {
                 Xử lý dữ liệu
               </Button>
             </Grid>
-            
+          
             <Grid item xs={4}>
           <Button
             variant="contained"
@@ -1475,7 +1994,7 @@ const RVCTab = () => {
                 startIcon={<PlayCircleOutlineIcon />}
                 onClick={handleTrainModel}
                 disabled={isTraining || !experimentName || !trainsetDir}
-              >
+          >
                 {isTraining ? (
               <>
                 <CircularProgress size={24} sx={{ mr: 1 }} color="inherit" />
@@ -1490,7 +2009,7 @@ const RVCTab = () => {
             </Paper>
         </TabPanel>
         
-      {/* Tab 5: Xử lý mô hình */}
+      {/* Tab Tools */}
       <TabPanel value={activeTab} index={4}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
@@ -1655,13 +2174,36 @@ const RVCTab = () => {
           </Grid>
         </Grid>
         </TabPanel>
-      
-      {/* Hiển thị lỗi nếu có */}
-      {error && (
-        <Alert severity="error" sx={{ mt: 2 }}>
-          {error}
-        </Alert>
-      )}
+        
+      {/* Tab Lịch sử */}
+      <TabPanel value={activeTab} index={5}>
+        <Box>
+          <Typography variant="h6" gutterBottom>
+            Lịch sử chuyển đổi RVC và tách giọng nói UVR
+          </Typography>
+          
+          <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 2 }}>
+            <Tabs value={historyTab} onChange={handleHistoryTabChange}>
+              <Tab label="Lịch sử chuyển đổi RVC" />
+              <Tab label="Lịch sử tách giọng UVR" />
+            </Tabs>
+          </Box>
+          
+          <Box sx={{ mt: 2 }}>
+            {historyTab === 0 && (
+              <Paper elevation={2} sx={{ p: 2 }}>
+                <RVCConversionHistory />
+              </Paper>
+            )}
+            
+            {historyTab === 1 && (
+              <Paper elevation={2} sx={{ p: 2 }}>
+                <UVRHistory />
+              </Paper>
+            )}
+          </Box>
+        </Box>
+      </TabPanel>
     </Box>
   );
 };

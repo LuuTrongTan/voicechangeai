@@ -44,7 +44,7 @@ const Header = () => {
                         color="inherit"
                         underline="none"
                     >
-                        Voice Changer
+                        
                     </Link>
                 </Typography>
 
@@ -53,7 +53,7 @@ const Header = () => {
                     <Button
                         color="inherit"
                         component={RouterLink}
-                        to="/openvoice"
+                        to="/"
                     >
                         OpenVoice
                     </Button>

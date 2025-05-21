@@ -8,11 +8,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Login from './components/auth/Login';
 import AdminDashboard from './components/admin/Dashboard';
 import AIEngineerDashboard from './components/ai_engineer/Dashboard';
-import OpenVoiceTab from './components/OpenVoice/TextToSpeechTab';
 import VoiceChangeOpenVoice from './components/OpenVoice/VoiceChangeOpenVoice';
 import RVCTab from './components/RVC/RVCTab';
 import Header from './components/layout/Header';
 import NotFound from './components/layout/NotFound';
+import Register from './components/auth/Register';
 
 // Context
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -30,34 +30,28 @@ const theme = createTheme({
     },
 });
 
-// Protected Route component
-const ProtectedRoute = ({ children, roles }) => {
-    const { user, loading, error } = useAuth();
-
+// PrivateRoute component để bảo vệ các route cần đăng nhập
+const PrivateRoute = ({ children, requiredRole = null }) => {
+    const { user, loading, isAuthenticated } = useAuth();
+    
     if (loading) {
-        return (
-            <Box display="flex" justifyContent="center" alignItems="center" minHeight="80vh">
-                <CircularProgress />
-            </Box>
-        );
+        return <div>Đang tải...</div>;
     }
-
-    if (error) {
-        return (
-            <Box m={2}>
-                <Alert severity="error">{error}</Alert>
-            </Box>
-        );
-    }
-
-    if (!user) {
+    
+    if (!isAuthenticated) {
         return <Navigate to="/login" />;
     }
-
-    if (roles && !roles.includes(user.role)) {
-        return <Navigate to="/" />;
+    
+    // Kiểm tra quyền nếu cần
+    if (requiredRole) {
+        if (requiredRole === 'admin' && user.role !== 'admin') {
+            return <Navigate to="/" />;
+        }
+        if (requiredRole === 'ai_engineer' && user.role !== 'ai_engineer' && user.role !== 'admin') {
+            return <Navigate to="/" />;
+        }
     }
-
+    
     return children;
 };
 
@@ -84,41 +78,40 @@ const AppContent = () => {
         <>
             <Header />
             <Routes>
+                {/* Route đăng nhập, đăng ký */}
                 <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
                 
-                {/* Admin Routes */}
-                <Route
-                    path="/admin"
-                    element={
-                        <ProtectedRoute roles={['admin']}>
-                            <AdminDashboard />
-                        </ProtectedRoute>
-                    }
-                />
+                {/* Route cần xác thực */}
+                <Route path="/dashboard" element={
+                    <PrivateRoute>
+                        <VoiceChangeOpenVoice />
+                    </PrivateRoute>
+                } />
                 
-                {/* AI Engineer Routes */}
-                <Route
-                    path="/ai-engineer"
-                    element={
-                        <ProtectedRoute roles={['ai_engineer']}>
-                            <AIEngineerDashboard />
-                        </ProtectedRoute>
-                    }
-                />
+                {/* Route cho Admin */}
+                <Route path="/admin/*" element={
+                    <PrivateRoute requiredRole="admin">
+                        <AdminDashboard />
+                    </PrivateRoute>
+                } />
                 
-                {/* Public Routes */}
-                <Route
-                    path="/"
-                    element={<VoiceChangeOpenVoice />}
-                />
-                <Route
-                    path="/openvoice"
-                    element={<OpenVoiceTab />}
-                />
-                <Route
-                    path="/rvc"
-                    element={<RVCTab />}
-                />
+                {/* Route cho AI Engineer */}
+                <Route path="/ai-engineer/*" element={
+                    <PrivateRoute requiredRole="ai_engineer">
+                        <AIEngineerDashboard />
+                    </PrivateRoute>
+                } />
+                
+                {/* Route cho RVC */}
+                <Route path="/rvc" element={
+                    <PrivateRoute>
+                        <RVCTab />
+                    </PrivateRoute>
+                } />
+                
+                {/* Route mặc định */}
+                <Route path="/" element={<Navigate to="/dashboard" />} />
                 
                 {/* 404 Route */}
                 <Route path="*" element={<NotFound />} />

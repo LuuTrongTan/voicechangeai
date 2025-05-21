@@ -67,7 +67,10 @@ export const VoiceAPI = {
   },
   
   // Lấy lịch sử chuyển đổi
-  getConversionHistory: () => API.get('/api/conversion-history'),
+  getConversionHistory: (modelType = 'openvoice') => API.get(`/api/conversion-history?model_type=${modelType}`),
+  
+  // Lấy lịch sử tách giọng nói UVR
+  getUvrHistory: () => API.get('/api/uvr-history'),
   
   // Theo dõi tiến trình xử lý (polling)
   getProgress: (jobId) => API.get(`/api/progress/${jobId}`),
@@ -123,6 +126,12 @@ export const VoiceAPI = {
         }
       });
     },
+    
+    // Lấy lịch sử chuyển đổi giọng nói RVC
+    getConversionHistory: () => API.get('/api/conversion-history?model_type=rvc'),
+    
+    // Lấy lịch sử tách giọng nói UVR
+    getUvrHistory: () => API.get('/api/uvr-history'),
     
     // Trích xuất đường cong F0
     extractF0: (audioFile, f0Method = 'rmvpe') => {
@@ -201,13 +210,74 @@ export const VoiceAPI = {
 
 export const adminService = {
   // Lấy thống kê tổng quan
-  getStats: () => API.get('/api/admin/stats'),
+  getStats: () => API.get('/api/admin/stats').then(response => response.data),
   
   // Lấy danh sách người dùng
-  getUsers: () => API.get('/api/admin/users'),
+  getUsers: () => API.get('/api/admin/users').then(response => response.data),
   
   // Lấy logs hệ thống
-  getLogs: () => API.get('/api/admin/logs')
+  getLogs: (filters = {}) => {
+    const { level, source, start_date, end_date, limit } = filters;
+    let url = '/api/admin/logs?';
+    
+    if (level) url += `level=${level}&`;
+    if (source) url += `source=${source}&`;
+    if (start_date) url += `start_date=${start_date}&`;
+    if (end_date) url += `end_date=${end_date}&`;
+    if (limit) url += `limit=${limit}&`;
+    
+    return API.get(url).then(response => {
+      // Kiểm tra và xử lý dữ liệu an toàn
+      if (!response.data) {
+        console.warn('Không có dữ liệu logs từ API');
+        return [];
+      }
+      
+      // Trả về mảng nếu response.data là mảng
+      if (Array.isArray(response.data)) {
+        return response.data;
+      } 
+      // Trả về mảng logs nếu response.data.logs là mảng
+      else if (response.data && Array.isArray(response.data.logs)) {
+        return response.data.logs;
+      } 
+      // Trường hợp có lỗi, trả về mảng rỗng
+      else {
+        console.error('Dữ liệu logs không phải là mảng:', response.data);
+        return [];
+      }
+    }).catch(error => {
+      console.error('Lỗi khi lấy logs:', error);
+      return [];
+    });
+  },
+  
+  // Lấy thông tin hiệu suất hệ thống (APM)
+  getSystemPerformance: () => API.get('/api/admin/system-performance').then(response => response.data),
+  
+  // Lấy thông tin database
+  getDatabaseInfo: () => API.get('/api/admin/database-info').then(response => response.data),
+  
+  // Phân tích lỗi
+  analyzeErrors: () => API.get('/api/admin/error-analysis').then(response => response.data),
+  
+  // Lấy nội dung file log trực tiếp
+  getLogFile: (type = 'app', lines = 100) => {
+    return API.get(`/api/admin/log-file?type=${type}&lines=${lines}`).then(response => {
+      // Đảm bảo trả về mảng
+      if (response.data && Array.isArray(response.data.log_content)) {
+        return { log_content: response.data.log_content };
+      } else if (response.data && typeof response.data.log_content === 'string') {
+        return { log_content: response.data.log_content.split('\n') };
+      } else {
+        console.error('Dữ liệu log_content không hợp lệ:', response.data);
+        return { log_content: [] };
+      }
+    }).catch(error => {
+      console.error('Lỗi khi lấy log file:', error);
+      return { log_content: [] };
+    });
+  }
 };
 
 export const aiEngineerService = {

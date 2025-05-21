@@ -1,0 +1,367 @@
+[
+  {
+    "timestamp": 1747219061.6616778,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747219061.6626751,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747219107.6098886,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747219107.6108847,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747278986.551264,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747278986.552261,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747295086.591934,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747295086.604079,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747295630.5975585,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747295630.5995524,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747295763.728503,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747295763.7295005,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747295904.472954,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747295904.4739513,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav",
+    "result_url": "/api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747299336.1974876,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747379112.3956332,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "my_voice_model",
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747379112.415733,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3"
+  },
+  {
+    "timestamp": 1747379293.9261558,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "target_voice": "my_voice_model",
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747379293.9261558,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3"
+  },
+  {
+    "timestamp": 1747380397.2314138,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3",
+    "target_voice": "senkoRvc_v1",
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747380397.2314138,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model.mp3",
+    "target_voice": "senkoRvc_v1",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_my_voice_model_rvc_senkoRvc_v1.mp3"
+  },
+  {
+    "timestamp": 1747380785.5912864,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3",
+    "target_voice": "senkoRvc_v1",
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747380785.5912864,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model.mp3",
+    "target_voice": "senkoRvc_v1",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model_rvc_senkoRvc_v1.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_my_voice_model_rvc_senkoRvc_v1.mp3"
+  },
+  {
+    "timestamp": 1747385583.6869686,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "target_voice": "sontung",
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_sontung.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_sontung.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747385583.7043405,
+    "source_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868.mp3",
+    "target_voice": "sontung",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_sontung.mp3",
+    "result_url": "/api/download/thien_nhien_mien_que_viet_nam_tu_lau_da_gan_bo_6a2c80ad-8cdf-41ff-8b90-50389b2f4868_rvc_sontung.mp3"
+  },
+  {
+    "timestamp": 1747712455.8307114,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747712455.854648,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "my_voice_model",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_my_voice_model.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav"
+  },
+  {
+    "timestamp": 1747712711.4675853,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "senkoRvc_v1",
+    "result_file": "poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747712711.4921749,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "senkoRvc_v1",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav"
+  },
+  {
+    "timestamp": 1747712807.6187623,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "senkoRvc_v1",
+    "result_file": "poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747712807.620756,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "target_voice": "senkoRvc_v1",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav",
+    "result_url": "/api/download/poem-read-out-deep-male-voice_rvc_senkoRvc_v1.wav"
+  },
+  {
+    "timestamp": 1747712982.472256,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "sontung",
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_sontung.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_sontung.mp3",
+    "params": {
+      "f0up_key": 0,
+      "index_rate": 0.5,
+      "protect": 0.33,
+      "rms_mix_rate": 0.25
+    }
+  },
+  {
+    "timestamp": 1747712982.4852214,
+    "source_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6.mp3",
+    "target_voice": "sontung",
+    "model_used": "rvc",
+    "tau": 0.4,
+    "result_file": "song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_sontung.mp3",
+    "result_url": "/api/download/song_nui_viet_nam_tu_bao_doi_nay_da_tro_thanh_mot_dcc935c0-1703-46e2-869f-8229dfcfb3b6_rvc_sontung.mp3"
+  }
+]

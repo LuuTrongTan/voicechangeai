@@ -101,7 +101,7 @@ const ConversionHistory = () => {
   const fetchHistory = async () => {
     setLoading(true);
     try {
-      const response = await VoiceAPI.getConversionHistory();
+      const response = await VoiceAPI.getConversionHistory('openvoice');
       setHistory(response.data);
       setError('');
     } catch (err) {

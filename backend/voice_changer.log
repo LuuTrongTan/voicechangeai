@@ -815,3 +815,1625 @@ LookupError:
 2025-05-13 20:40:40,162 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:40:40] "[33mGET /api/rvc/models HTTP/1.1[0m" 404 -
 2025-05-13 20:41:57,627 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
 2025-05-13 20:41:57,710 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 20:52:00,970 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 20:52:01,028 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-13 20:52:01,029 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 20:52:01,030 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 20:52:01,587 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 20:52:01,618 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 20:52:01,620 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 20:52:11,765 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:52:11] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 20:52:11,862 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:52:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-13 20:52:12,029 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:52:12] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 20:52:18,351 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:52:18] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 20:52:18,655 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:52:18] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 20:55:47,818 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 20:55:47,894 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 20:55:48,470 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 20:55:48,501 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 20:55:48,504 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 20:56:07,820 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:56:07] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 20:56:08,083 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:56:08] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 20:56:16,883 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 20:56:16,965 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 20:56:17,546 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 20:56:17,575 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 20:56:17,578 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 20:56:43,033 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 20:56:43] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:03:32,336 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:03:32,413 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:03:32,982 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:03:33,012 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:03:33,015 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:03:45,204 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:03:45,308 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:03:45,930 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:03:45,961 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:03:45,964 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:03:48,018 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\test_rvc.py', reloading
+2025-05-13 21:03:48,110 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:03:48,745 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:03:48,777 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:03:48,780 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:03:49,812 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_app.py', reloading
+2025-05-13 21:03:49,913 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:03:50,571 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:03:50,600 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:03:50,603 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:03:51,638 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:03:51,720 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:03:52,318 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:03:52,362 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:03:52,367 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:03:59,457 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:03:59] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:04:17,736 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:04:17,775 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-13 21:04:17,776 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 21:04:17,777 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:04:18,351 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:04:18,381 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:04:18,384 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:04:28,760 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:28] "[33mGET /main.2c008635e4c44ad1a813.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-13 21:04:28,854 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:28] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:04:29,104 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:29] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:04:29,169 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:29] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:04:29,453 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:29] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:04:42,197 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:42] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:04:42,499 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:42] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:04:47,607 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:04:47] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:06:14,964 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:06:15,051 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:06:15,603 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:06:15,632 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:06:15,635 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:06:21,406 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:06:21] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:06:21,672 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:06:21] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:06:26,565 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:06:26] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:06:54,289 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:06:54] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:08:07,217 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:08:07,257 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-13 21:08:07,258 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 21:08:07,259 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:08:07,802 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:08:07,831 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:08:07,835 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:08:18,041 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:08:18] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:08:18,304 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:08:18] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:08:25,508 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:08:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:08:25,825 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:08:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:08:31,114 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:08:31] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:09:02,584 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:09:02,662 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:09:03,235 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:09:03,263 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:09:03,266 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:09:11,342 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:09:11] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:10:13,210 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:10:13,291 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:10:13,859 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:10:13,889 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:10:13,892 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:10:30,648 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:10:30] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:11:09,657 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:11:09,751 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:11:10,315 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:11:10,345 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:11:10,348 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:11:32,987 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:11:32] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:12:09,181 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:12:09,261 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:12:09,828 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:12:09,858 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:12:09,861 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:12:37,327 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:12:37] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-13 21:13:06,540 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:13:06,623 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:13:07,194 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:13:07,225 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:13:07,229 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:15:00,360 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:15:00] "POST /api/convert HTTP/1.1" 200 -
+2025-05-13 21:15:10,879 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:15:10] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-13 21:15:11,083 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:15:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-13 21:18:23,574 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:18:23,702 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:18:24,468 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:18:24,506 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:18:24,510 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:18:30,137 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:18:30] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:18:58,993 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:18:59,068 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:18:59,614 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:18:59,643 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:18:59,646 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:19:08,875 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:19:08] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:19:09,140 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:19:09] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:19:41,965 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:19:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:19:42,285 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:19:42] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:21:34,243 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:21:34,314 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:21:34,865 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:21:34,894 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:21:34,898 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:21:40,208 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:21:40] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:21:40,473 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:21:40] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:21:47,091 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:21:47,159 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:21:47,703 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:21:47,732 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:21:47,735 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:21:52,648 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:21:52] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:21:52,910 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:21:52] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:22:31,404 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:22:31,476 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:22:32,014 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:22:32,044 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:22:32,047 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:22:52,647 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:22:52] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:22:52,897 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:22:52] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:22:58,752 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:22:58] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:22:59,058 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:22:59] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:23:02,637 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:23:02,720 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:23:03,286 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:23:03,315 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:23:03,318 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:23:04,399 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-13 21:23:04,400 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:23:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-13 21:23:04,657 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-13 21:23:04,658 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:23:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-13 21:23:05,388 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:23:05] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:23:05,695 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:23:05] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:24:38,955 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:24:39,025 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:24:39,568 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:24:39,595 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:24:39,598 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:24:46,690 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:24:46,761 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:24:47,300 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:24:47,328 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:24:47,331 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:25:10,616 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:25:10,703 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:25:11,263 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:25:11,291 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:25:11,294 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:25:24,293 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:25:24,338 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-13 21:25:24,339 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 21:25:24,340 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:25:24,873 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:25:24,910 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:25:24,914 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:25:34,757 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:34] "[33mGET /main.4cb6a8b6643b471fc3d2.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-13 21:25:36,419 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:36] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:25:36,643 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:36] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:25:36,687 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:36] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:25:38,082 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:38] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:25:38,084 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:25:38] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:27:28,557 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:27:28] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:27:28,818 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:27:28] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:28:25,295 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:28:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:28:25,599 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:28:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:30:27,818 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:30:27] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:30:28,079 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:30:28] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:31:47,738 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:31:47] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:31:48,000 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:31:48] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:35:02,508 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:35:02] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:35:02,774 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:35:02] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:36:15,701 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:36:15] "[31m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 405 -
+2025-05-13 21:38:33,465 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:38:33,535 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:38:34,079 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:38:34,109 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:38:34,112 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:39:05,288 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:39:05] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:39:05,532 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:39:05] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:39:05,595 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:39:05] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:39:05,597 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:39:05] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:39:28,910 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:39:28] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:42:32,981 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:42:33,064 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:42:33,617 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:42:33,646 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:42:33,649 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:43:28,018 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:43:28] "POST /api/convert HTTP/1.1" 200 -
+2025-05-13 21:43:31,655 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:43:31] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:46:08,890 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:46:08,970 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:46:09,510 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:46:09,546 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:46:09,548 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:47:23,065 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:47:23] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:48:12,838 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:48:12] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:49:19,868 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:49:19,965 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:49:20,505 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:49:20,541 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:49:20,544 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:50:03,090 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:50:03] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:50:43,921 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 21:50:44,008 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:50:44,563 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:50:44,593 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:50:44,600 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:50:52,684 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-13 21:50:52,766 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:50:53,289 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:50:53,326 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:50:53,329 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:50:56,201 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:50:56] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 21:51:19,479 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:51:19,520 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-13 21:51:19,520 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-13 21:51:19,520 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 21:51:20,060 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 21:51:20,096 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 21:51:20,098 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 21:51:33,281 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:33] "[33mGET /main.b87ba0651d8bac574762.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-13 21:51:33,852 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:33] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:51:34,051 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:34] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:51:34,125 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:34] "GET /api/models HTTP/1.1" 200 -
+2025-05-13 21:51:34,312 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:34] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:51:34,366 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:34] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:51:34,369 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:34] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:51:49,123 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:49] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:51:49,431 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:49] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-13 21:51:49,440 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:49] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:51:49,691 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:51:49] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-13 21:52:00,248 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 21:52:00] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:33:21,858 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:33:21] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:34:23,939 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:34:24,011 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:34:24,583 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:34:24,613 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:34:24,616 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:34:32,662 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:34:32] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:35:34,275 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:35:34,353 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:35:34,937 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:35:34,968 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:35:34,972 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:35:47,695 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:35:47] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:36:46,464 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:36:46] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:37:36,021 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:37:36,094 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:37:36,662 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:37:36,693 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:37:36,696 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:37:43,449 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:37:43] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:39:49,156 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:39:49,431 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:39:49,997 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:39:50,028 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:39:50,031 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:40:26,683 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:40:26] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:43:02,636 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:43:02,915 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:43:03,475 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:43:03,505 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:43:03,508 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:43:08,555 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:43:08] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:43:20,965 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:43:21,276 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:43:21,884 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:43:21,915 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:43:21,918 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:43:23,877 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:43:23] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:44:30,746 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:44:31,025 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:44:31,663 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:44:31,694 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:44:31,697 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:44:34,385 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-13 23:44:34,386 - configs.config - INFO - overwrite v1/32k.json
+2025-05-13 23:44:34,386 - configs.config - INFO - overwrite v1/40k.json
+2025-05-13 23:44:34,387 - configs.config - INFO - overwrite v1/48k.json
+2025-05-13 23:44:34,387 - configs.config - INFO - overwrite v2/48k.json
+2025-05-13 23:44:34,388 - configs.config - INFO - overwrite v2/32k.json
+2025-05-13 23:44:34,388 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-13 23:44:34,388 - configs.config - INFO - Use cpu instead
+2025-05-13 23:44:34,388 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-13 23:44:35,105 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:44:35] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:45:43,476 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:45:43,777 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:45:44,361 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:45:44,393 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:45:44,397 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:45:47,544 - models.rvc_controller - INFO - Input file: D:\Code\voice\backend\uploads\nhac.wav
+2025-05-13 23:45:49,063 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-13 23:45:49,064 - configs.config - INFO - overwrite v1/32k.json
+2025-05-13 23:45:49,064 - configs.config - INFO - overwrite v1/40k.json
+2025-05-13 23:45:49,065 - configs.config - INFO - overwrite v1/48k.json
+2025-05-13 23:45:49,065 - configs.config - INFO - overwrite v2/48k.json
+2025-05-13 23:45:49,066 - configs.config - INFO - overwrite v2/32k.json
+2025-05-13 23:45:49,066 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-13 23:45:49,066 - configs.config - INFO - Use cpu instead
+2025-05-13 23:45:49,066 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-13 23:45:49,370 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:45:49] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:45:58,235 - models.rvc_controller - INFO - Input file: D:\Code\voice\backend\uploads\nhac.wav
+2025-05-13 23:45:58,578 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:45:58] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:46:58,207 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:46:58,480 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:46:59,062 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:46:59,092 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:46:59,095 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:47:01,464 - models.rvc_controller - INFO - Input file: D:\Code\voice\backend\uploads\nhac.wav
+2025-05-13 23:47:01,464 - models.rvc_controller - INFO - Output dir: D:\Code\voice\backend\results
+2025-05-13 23:47:01,489 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:47:01] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:47:26,715 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:47:26,905 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:47:27,629 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:47:27,663 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:47:27,668 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:47:29,778 - models.rvc_controller - INFO - Input file: D:\Code\voice\backend\uploads\nhac.wav
+2025-05-13 23:47:31,362 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-13 23:47:31,363 - configs.config - INFO - overwrite v1/32k.json
+2025-05-13 23:47:31,363 - configs.config - INFO - overwrite v1/40k.json
+2025-05-13 23:47:31,364 - configs.config - INFO - overwrite v1/48k.json
+2025-05-13 23:47:31,364 - configs.config - INFO - overwrite v2/48k.json
+2025-05-13 23:47:31,364 - configs.config - INFO - overwrite v2/32k.json
+2025-05-13 23:47:31,365 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-13 23:47:31,365 - configs.config - INFO - Use cpu instead
+2025-05-13 23:47:31,365 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-13 23:47:31,684 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:47:31] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:48:33,366 - models.rvc_controller - INFO - Input file: D:\Code\voice\backend\uploads\nhac.wav
+2025-05-13 23:48:33,712 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:48:33] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:50:39,338 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:50:39,628 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:50:41,592 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:50:41,623 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:50:41,627 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:50:53,322 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:50:53] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-13 23:54:09,202 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-13 23:54:09,558 - werkzeug - INFO -  * Restarting with stat
+2025-05-13 23:54:11,580 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-13 23:54:11,606 - werkzeug - WARNING -  * Debugger is active!
+2025-05-13 23:54:11,609 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-13 23:54:28,592 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:54:28] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-13 23:55:42,068 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:55:42] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-13 23:56:27,540 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:56:27] "[33mGET /api/download/nhac_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav HTTP/1.1[0m" 404 -
+2025-05-13 23:56:27,573 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:56:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-13 23:56:54,573 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 23:56:54] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 00:00:12,682 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:00:13,110 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:00:14,073 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:00:14,118 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:00:14,122 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:00:31,483 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-14 00:00:31,572 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:00:32,194 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:00:32,225 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:00:32,229 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:01:03,021 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:01:03] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 00:01:03,285 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:01:03] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 00:01:03,329 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:01:03] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 00:01:03,331 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:01:03] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 00:02:36,079 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:02:36] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:04:48,808 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:04:48,899 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:04:49,451 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:04:49,481 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:04:49,484 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:04:53,452 - models.rvc_controller - ERROR - Traceback (most recent call last):
+  File "D:\Code\voice\backend\models\rvc_controller.py", line 139, in separate_vocals
+    from infer.modules.uvr5.modules import uvr
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 14, in <module>
+    config = Config()
+  File "D:\Code\voice\ai\rvc\configs\config.py", line 36, in wrapper
+    wrapper.instance = func(*args, **kwargs)
+  File "D:\Code\voice\ai\rvc\configs\config.py", line 51, in __init__
+    self.json_config = self.load_config_json()
+  File "D:\Code\voice\ai\rvc\configs\config.py", line 71, in load_config_json
+    shutil.copy(f"configs/{config_file}", p)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 417, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\shutil.py", line 254, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: 'configs/v1/32k.json'
+
+2025-05-14 00:04:53,458 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:04:53] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:05:38,525 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:05:38,797 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:05:39,358 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:05:39,390 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:05:39,393 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:05:43,710 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:05:43,710 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:05:43,711 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:05:43,711 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:05:43,711 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:05:43,712 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:05:43,712 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:05:43,712 - configs.config - INFO - Use cpu instead
+2025-05-14 00:05:43,712 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:05:43,718 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:05:43] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:06:29,179 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:06:29,553 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:06:30,105 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:06:30,134 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:06:30,137 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:06:34,092 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:06:34,093 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:06:34,093 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:06:34,093 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:06:34,094 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:06:34,094 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:06:34,094 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:06:34,095 - configs.config - INFO - Use cpu instead
+2025-05-14 00:06:34,095 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:06:34,104 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:06:34] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:07:16,798 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:07:16] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:07:42,421 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:07:42,707 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:07:43,286 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:07:43,316 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:07:43,319 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:07:47,632 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:07:47,632 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:07:47,633 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:07:47,633 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:07:47,643 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:07:47,649 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:07:47,649 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:07:47,650 - configs.config - INFO - Use cpu instead
+2025-05-14 00:07:47,650 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:07:47,683 - models.rvc_controller - INFO -   - conversion_history.json
+2025-05-14 00:07:47,683 - models.rvc_controller - INFO -   - instrument_nhac.wav.reformatted.wav_10_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:07:47,684 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker0.wav
+2025-05-14 00:07:47,684 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.wav
+2025-05-14 00:07:47,684 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav
+2025-05-14 00:07:47,684 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3
+2025-05-14 00:07:47,685 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav
+2025-05-14 00:07:47,685 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker2.mp3
+2025-05-14 00:07:47,685 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_example_reference.mp3
+2025-05-14 00:07:47,685 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_example_reference.wav
+2025-05-14 00:07:47,686 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:07:47,686 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:07:47,686 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_rvc_my_voice_model.wav
+2025-05-14 00:07:47,687 - models.rvc_controller - INFO -   - temp
+2025-05-14 00:07:47,687 - models.rvc_controller - INFO -   - temp_tts_1746588010_openvoice_en-au.wav
+2025-05-14 00:07:47,687 - models.rvc_controller - INFO -   - temp_tts_1746588040_openvoice_kr.wav
+2025-05-14 00:07:47,689 - models.rvc_controller - INFO -   - temp_tts_1746588290_openvoice_fr.wav
+2025-05-14 00:07:47,689 - models.rvc_controller - INFO -   - temp_tts_1746588441_openvoice_fr.wav
+2025-05-14 00:07:47,689 - models.rvc_controller - INFO -   - temp_tts_1746588492_openvoice_fr.wav
+2025-05-14 00:07:47,689 - models.rvc_controller - INFO -   - temp_tts_1746588518_openvoice_fr.wav
+2025-05-14 00:07:47,690 - models.rvc_controller - INFO -   - temp_tts_1746588556_openvoice_fr.wav
+2025-05-14 00:07:47,690 - models.rvc_controller - INFO -   - temp_tts_1746588632_openvoice_en-au.wav
+2025-05-14 00:07:47,690 - models.rvc_controller - INFO -   - temp_tts_1746588704_openvoice_en-au.wav
+2025-05-14 00:07:47,690 - models.rvc_controller - INFO -   - temp_tts_1746588719_openvoice_en-au.wav
+2025-05-14 00:07:47,691 - models.rvc_controller - INFO -   - temp_tts_1746588786_openvoice_en-au.wav
+2025-05-14 00:07:47,691 - models.rvc_controller - INFO -   - temp_tts_1746588803_openvoice_en-br.wav
+2025-05-14 00:07:47,691 - models.rvc_controller - INFO -   - temp_tts_1746590969_openvoice_zh.wav
+2025-05-14 00:07:47,692 - models.rvc_controller - INFO -   - temp_tts_1746604755_openvoice_en-au.wav
+2025-05-14 00:07:47,692 - models.rvc_controller - INFO -   - temp_tts_1746607220_openvoice_en-au.wav
+2025-05-14 00:07:47,692 - models.rvc_controller - INFO -   - temp_tts_1746607247_openvoice_en-au.wav
+2025-05-14 00:07:47,692 - models.rvc_controller - INFO -   - temp_tts_1746784250_openvoice_en-au.wav
+2025-05-14 00:07:47,693 - models.rvc_controller - INFO -   - temp_tts_1746784275_openvoice_en-au.wav
+2025-05-14 00:07:47,693 - models.rvc_controller - INFO -   - temp_tts_1746785475_openvoice_en-au.wav
+2025-05-14 00:07:47,693 - models.rvc_controller - INFO -   - temp_tts_1747187900_openvoice_en-au.wav
+2025-05-14 00:07:47,694 - models.rvc_controller - INFO -   - temp_tts_1747188256_openvoice_en-au.wav
+2025-05-14 00:07:47,694 - models.rvc_controller - INFO -   - temp_uvr
+2025-05-14 00:07:47,694 - models.rvc_controller - INFO -   - tts_history.json
+2025-05-14 00:07:47,694 - models.rvc_controller - INFO -   - uvr_output
+2025-05-14 00:07:47,707 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:07:47] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:08:48,454 - models.rvc_controller - INFO -   - conversion_history.json
+2025-05-14 00:08:48,454 - models.rvc_controller - INFO -   - instrument_nhac.wav.reformatted.wav_10_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:08:48,454 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker0.wav
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_demo_speaker2.wav
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker1.mp3
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker1.wav
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_demo_speaker2.mp3
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_example_reference.mp3
+2025-05-14 00:08:48,455 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_example_reference.wav
+2025-05-14 00:08:48,456 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:08:48,456 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 00:08:48,456 - models.rvc_controller - INFO -   - poem-read-out-deep-male-voice_rvc_my_voice_model.wav
+2025-05-14 00:08:48,456 - models.rvc_controller - INFO -   - temp
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588010_openvoice_en-au.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588040_openvoice_kr.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588290_openvoice_fr.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588441_openvoice_fr.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588492_openvoice_fr.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588518_openvoice_fr.wav
+2025-05-14 00:08:48,457 - models.rvc_controller - INFO -   - temp_tts_1746588556_openvoice_fr.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746588632_openvoice_en-au.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746588704_openvoice_en-au.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746588719_openvoice_en-au.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746588786_openvoice_en-au.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746588803_openvoice_en-br.wav
+2025-05-14 00:08:48,458 - models.rvc_controller - INFO -   - temp_tts_1746590969_openvoice_zh.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746604755_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746607220_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746607247_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746784250_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746784275_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1746785475_openvoice_en-au.wav
+2025-05-14 00:08:48,459 - models.rvc_controller - INFO -   - temp_tts_1747187900_openvoice_en-au.wav
+2025-05-14 00:08:48,460 - models.rvc_controller - INFO -   - temp_tts_1747188256_openvoice_en-au.wav
+2025-05-14 00:08:48,460 - models.rvc_controller - INFO -   - temp_uvr
+2025-05-14 00:08:48,460 - models.rvc_controller - INFO -   - tts_history.json
+2025-05-14 00:08:48,460 - models.rvc_controller - INFO -   - uvr_output
+2025-05-14 00:08:48,469 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:08:48] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:10:14,826 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:10:15,100 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:10:15,638 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:10:15,667 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:10:15,670 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:10:19,837 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:10:19,838 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:10:19,838 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:10:19,839 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:10:19,839 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:10:19,840 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:10:19,840 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:10:19,840 - configs.config - INFO - Use cpu instead
+2025-05-14 00:10:19,840 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:10:19,865 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:10:19,867 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:10:19,891 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:10:19] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 00:12:28,048 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:12:28,335 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:12:28,894 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:12:28,924 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:12:28,927 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:13:05,079 - models.rvc_controller - ERROR - Traceback (most recent call last):
+  File "D:\Code\voice\backend\models\rvc_controller.py", line 172, in separate_vocals
+    "--inst-output", instrumental_output,
+ModuleNotFoundError: No module named 'infer.modules.uvr5.preprocess'
+
+2025-05-14 00:13:05,085 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:13:05] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:13:05,501 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:13:05,789 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:13:06,335 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:13:06,364 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:13:06,366 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:13:16,134 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:13:16,135 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:13:16,135 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:13:16,136 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:13:16,136 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:13:16,137 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:13:16,137 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:13:16,137 - configs.config - INFO - Use cpu instead
+2025-05-14 00:13:16,137 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:13:16,150 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:13:16,151 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:13:16,169 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:13:16] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:19:46,280 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:19:46,631 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:19:47,222 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:19:47,252 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:19:47,255 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:21:34,739 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:21:34] "POST /api/convert HTTP/1.1" 200 -
+2025-05-14 00:22:53,205 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:22:53] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-14 00:22:53,426 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:22:53] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-14 00:22:53,518 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:22:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 00:23:05,292 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:23:05] "GET /api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav HTTP/1.1" 200 -
+2025-05-14 00:23:15,293 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:23:15,294 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:23:15,294 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:23:15,295 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:23:15,295 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:23:15,296 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:23:15,296 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:23:15,296 - configs.config - INFO - Use cpu instead
+2025-05-14 00:23:15,297 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:23:15,310 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:23:15,311 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:23:15,329 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:23:15] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:25:12,652 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:25:12,934 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:25:13,512 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:25:13,542 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:25:13,545 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:25:46,114 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:25:46,114 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:25:46,115 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:25:46,115 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:25:46,115 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:25:46,116 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:25:46,116 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:25:46,116 - configs.config - INFO - Use cpu instead
+2025-05-14 00:25:46,116 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:25:46,128 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:25:46,129 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 33, in uvr
+    model_path=os.path.join(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\ntpath.py", line 104, in join
+    path = os.fspath(path)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+2025-05-14 00:25:46,148 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:25:46] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:27:01,398 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:27:01] "POST /api/convert HTTP/1.1" 200 -
+2025-05-14 00:27:27,917 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:27:27] "[35m[1mGET /api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-14 00:28:20,641 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:28:20,936 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:28:21,508 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:28:21,539 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:28:21,542 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:28:57,097 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:28:57,182 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:28:57,739 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:28:57,769 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:28:57,772 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:29:44,404 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:29:44] "[35m[1mGET /api/download/lo-fi-spoken-vintage-beat-about-to-drop_F_major_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-14 00:30:33,331 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:30:33,405 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:30:33,954 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:30:33,984 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:30:33,987 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:30:53,302 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:30:53,372 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:30:53,943 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:30:53,972 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:30:53,975 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:32:18,428 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:32:18,515 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:32:19,077 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:32:19,107 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:32:19,110 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:32:45,480 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:32:45,572 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:32:46,125 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:32:46,154 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:32:46,157 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:32:58,346 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:32:58,416 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:32:58,963 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:32:58,993 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:32:58,996 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:34:06,571 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:34:06,572 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:34:06,572 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:34:06,573 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:34:06,573 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:34:06,574 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:34:06,574 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:34:06,574 - configs.config - INFO - Use cpu instead
+2025-05-14 00:34:06,574 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:34:06,826 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 41, in uvr
+    paths = [os.path.join(inp_root, name) for name in os.listdir(inp_root)]
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\Code\\voice\\ai\\rvc\\uploads'
+
+2025-05-14 00:34:06,837 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 41, in uvr
+    paths = [os.path.join(inp_root, name) for name in os.listdir(inp_root)]
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'D:\\Code\\voice\\ai\\rvc\\uploads'
+
+2025-05-14 00:34:06,855 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:34:06] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:36:45,087 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:36:45,364 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:36:45,927 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:36:45,958 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:36:45,961 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:37:11,361 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:37:11,427 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:37:11,963 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:37:11,993 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:37:11,995 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:37:30,259 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:37:30,332 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:37:30,880 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:37:30,909 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:37:30,912 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:37:45,138 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:37:45,208 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:37:45,761 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:37:45,790 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:37:45,793 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:38:00,997 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:38:01,067 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:38:01,611 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:38:01,640 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:38:01,643 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:38:29,024 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:38:29,105 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:38:29,657 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:38:29,687 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:38:29,690 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:38:51,337 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:38:51,338 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:38:51,338 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:38:51,339 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:38:51,339 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:38:51,340 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:38:51,340 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:38:51,340 - configs.config - INFO - Use cpu instead
+2025-05-14 00:38:51,340 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:38:51,352 - models.rvc_controller - INFO - Basename: nhac.wav
+2025-05-14 00:38:51,592 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:38:51,603 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:38:51,634 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:38:51] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:41:15,527 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:41:15,806 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:41:16,350 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:41:16,380 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:41:16,383 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:42:09,218 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:42:09,287 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:42:09,842 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:42:09,872 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:42:09,875 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:42:45,384 - configs.config - INFO - No supported Nvidia GPU found
+2025-05-14 00:42:45,385 - configs.config - INFO - overwrite v1/32k.json
+2025-05-14 00:42:45,385 - configs.config - INFO - overwrite v1/40k.json
+2025-05-14 00:42:45,386 - configs.config - INFO - overwrite v1/48k.json
+2025-05-14 00:42:45,386 - configs.config - INFO - overwrite v2/48k.json
+2025-05-14 00:42:45,386 - configs.config - INFO - overwrite v2/32k.json
+2025-05-14 00:42:45,387 - configs.config - INFO - overwrite preprocess_per to 3
+2025-05-14 00:42:45,387 - configs.config - INFO - Use cpu instead
+2025-05-14 00:42:45,387 - configs.config - INFO - Half-precision floating-point: False, device: cpu
+2025-05-14 00:42:45,651 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:42:45,662 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:42:45,680 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:42:45] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:43:05,169 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:43:05,180 - models.rvc_controller - INFO - UVR progress: Traceback (most recent call last):
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in uvr
+    paths = [path.name for path in paths]
+  File "D:\Code\voice\ai\rvc\infer\modules\uvr5\modules.py", line 43, in <listcomp>
+    paths = [path.name for path in paths]
+AttributeError: 'str' object has no attribute 'name'
+
+2025-05-14 00:43:05,197 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:43:05] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:45:19,099 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:45:19,380 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:45:21,332 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:45:21,358 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:45:21,361 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:48:12,187 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:48:12,463 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:48:14,394 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:48:14,419 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:48:14,422 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:48:40,900 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:48:41,165 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:48:43,086 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:48:43,111 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:48:43,114 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:49:31,519 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:49:31] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:49:57,086 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:49:57] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:50:09,634 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:50:09] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:50:36,697 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:50:36,735 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 00:50:36,735 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 00:50:36,737 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:50:38,807 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:50:38,831 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:50:38,834 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:50:56,131 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:50:56] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 00:52:16,310 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:52:16,822 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:52:18,795 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:52:18,820 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:52:18,823 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:53:07,586 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 00:53:07,866 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 00:53:09,977 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 00:53:10,004 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 00:53:10,007 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 00:56:12,517 - infer.modules.uvr5.vr - INFO - nhac.wav instruments done
+2025-05-14 00:56:17,631 - infer.modules.uvr5.vr - INFO - nhac.wav vocals done
+2025-05-14 00:56:18,206 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:56:18] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 01:03:22,906 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:22] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:03:23,157 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:23] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:03:24,450 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:24] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:03:24,763 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:24] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:03:24,771 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:24] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:03:25,012 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:03:25] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:07:46,885 - infer.modules.uvr5.vr - INFO - nhac.wav instruments done
+2025-05-14 01:07:52,103 - infer.modules.uvr5.vr - INFO - nhac.wav vocals done
+2025-05-14 01:07:52,619 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:07:52] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 01:09:09,970 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:09] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:09:10,228 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:10] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:09:10,969 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:10] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:09:11,274 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:11] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:09:11,299 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:11] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:09:11,545 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:09:11] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:12:09,824 - infer.modules.uvr5.vr - INFO - nhac.wav instruments done
+2025-05-14 01:12:14,958 - infer.modules.uvr5.vr - INFO - nhac.wav vocals done
+2025-05-14 01:12:15,460 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:12:15] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 01:13:02,287 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 01:13:02,324 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 01:13:02,324 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 01:13:02,326 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 01:13:04,392 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 01:13:04,419 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 01:13:04,422 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 01:13:14,543 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:14] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:13:14,813 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:14] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 01:13:47,433 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 01:13:47,434 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:47] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 01:13:47,738 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 01:13:47,739 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:47] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 01:13:47,888 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:47] "[33mGET /main.d44158c4aa4aea3deca8.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 01:13:48,333 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:48] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:13:48,642 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:48] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:13:48,673 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:48] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:13:48,902 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:48] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:13:48,991 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:48] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 01:13:49,206 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:49] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 01:13:49,756 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:49] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:13:50,070 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:50] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:13:50,079 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:50] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:13:50,331 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:13:50] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:14:36,356 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 01:14:37,101 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 01:14:39,233 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 01:14:39,262 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 01:14:39,266 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 01:15:38,524 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav instruments done
+2025-05-14 01:15:39,424 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav vocals done
+2025-05-14 01:15:39,648 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:15:39] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 01:16:15,598 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:16:15] "[33mGET /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 01:16:16,545 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:16:16] "[33mGET /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 01:16:17,974 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:16:17] "[33mGET /api/download/instrument_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 01:17:43,924 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:43] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:17:43,925 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:43] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,187 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,234 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,235 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,503 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,550 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 01:17:44,551 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 01:17:44] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 01:17:51,986 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 01:17:52,659 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:01:07,809 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:01:07,907 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 02:01:07,907 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 02:01:07,907 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:01:09,858 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:01:09,891 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:01:09,897 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:01:49,431 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:01:49] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:01:49,653 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:01:49] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:01:52,815 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:01:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 02:02:09,035 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:02:09] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:02:09,357 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:02:09] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:02:09,827 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:02:09] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:02:10,144 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:02:10] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:03:53,537 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:53] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:03:53,809 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:53] "[35m[1mGET /api/models HTTP/1.1[0m" 500 -
+2025-05-14 02:03:55,518 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:55] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:03:55,838 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:55] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:03:57,026 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:03:57,027 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:57] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:03:57,344 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:03:57,346 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:03:57] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:25,642 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:25,643 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:25] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:25,897 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:25,898 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:25] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:28,269 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:28] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:28,577 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:28] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:30,254 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:30] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:30,563 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:30] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:39,152 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:39,153 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:39] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:39,461 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:39,461 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:39] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:41,057 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:41,058 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:41] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:41,368 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:05:41,368 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:41] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:05:42,432 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:42] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:42,741 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:05:42] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:05:50,575 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:05:50,878 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:05:52,819 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:05:52,853 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:05:52,856 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:05:58,932 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:05:59,222 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:06:01,232 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:06:01,267 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:06:01,269 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:06:01,794 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:01] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:06:02,056 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:02] "[35m[1mGET /api/rvc/models HTTP/1.1[0m" 500 -
+2025-05-14 02:06:23,487 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:06:23,763 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:06:25,724 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:06:25,748 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:06:25,751 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:06:50,978 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:06:51,263 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:06:53,253 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:06:53,283 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:06:53,283 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:06:53,303 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:53] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:06:53,349 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:53] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:06:53,679 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:53] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:06:53,686 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:53] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:06:55,598 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:55] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:06:55,870 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:55] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:06:55,903 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:55] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:06:55,913 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:06:55] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:07:05,196 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:07:05,196 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:05] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:07:05,455 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 02:07:05,456 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:05] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 02:07:06,867 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:06] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:07:07,179 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:07] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:07:07,189 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:07] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:07:07,458 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:07] "[35m[1mGET /api/uvr/models HTTP/1.1[0m" 500 -
+2025-05-14 02:07:13,494 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:07:13,781 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:07:15,751 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:07:15,777 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:07:15,780 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:07:17,722 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:17] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:07:17,977 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:17] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:07:18,039 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:18] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:07:18,041 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:07:18] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:08:13,164 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:08:13] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 02:08:57,802 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:08:58,091 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:11:21,957 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:11:22,039 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 02:11:22,039 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 02:11:22,039 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:11:23,922 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:11:23,942 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:11:23,949 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:12:21,332 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:12:21,381 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 02:12:21,381 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 02:12:21,382 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:12:23,258 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:12:23,292 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:12:23,292 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:12:50,374 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:50] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 02:12:50,621 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:50] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 02:12:58,000 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:58] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:12:58,313 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:58] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:12:58,315 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:58] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:12:58,568 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:12:58] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:13:19,803 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:13:19] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 02:13:45,768 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:13:46,234 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:13:48,175 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:13:48,199 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:13:48,205 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:15:38,363 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:15:38,635 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:15:40,559 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:15:40,586 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:15:40,587 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:16:12,881 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:16:13,143 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:16:15,053 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:16:15,068 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:16:15,081 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:16:48,220 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:16:48] "[35m[1mPOST /api/rvc/separate-vocals HTTP/1.1[0m" 500 -
+2025-05-14 02:17:08,947 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:17:08] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:17:09,252 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:17:09] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:17:09,277 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:17:09] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:17:09,502 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:17:09] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:19:46,564 - infer.modules.uvr5.vr - INFO - nhac.wav instruments done
+2025-05-14 02:19:51,342 - infer.modules.uvr5.vr - INFO - nhac.wav vocals done
+2025-05-14 02:19:51,747 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:19:51] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 02:21:27,948 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:21:27] "POST /api/convert HTTP/1.1" 200 -
+2025-05-14 02:21:35,063 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:21:35] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_rvc_my_voice_model.wav HTTP/1.1[0m" 206 -
+2025-05-14 02:21:35,289 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:21:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 02:21:48,430 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:21:48,968 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:21:50,870 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:21:50,896 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:21:50,899 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:22:08,944 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:22:08,987 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 02:22:08,988 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 02:22:08,988 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:22:10,874 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:22:10,899 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:22:10,902 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:24:28,313 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:24:28,348 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.183:5000
+2025-05-14 02:24:28,349 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 02:24:28,350 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:24:30,252 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:24:30,282 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:24:30,282 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:24:42,882 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:24:42] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 02:24:43,139 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:24:43] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 02:25:04,153 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:25:04] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:25:04,460 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:25:04] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:25:04,463 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:25:04] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:25:04,723 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:25:04] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:39,838 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:39] "[33mGET /main.1b02b7a301af7aea4749.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:28:39,855 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:39] "[33mGET /main.1b02b7a301af7aea4749.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:28:40,169 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:40] "[33mGET /main.1b02b7a301af7aea4749.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:28:41,020 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,281 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,335 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,338 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,599 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,641 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,642 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,907 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,950 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:41,951 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:41] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:28:42,223 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:42] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:28:42,266 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:28:42] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:30:30,263 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav instruments done
+2025-05-14 02:30:31,102 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav vocals done
+2025-05-14 02:30:31,294 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:30:31] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 02:31:22,106 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:22] "[33mGET /main.94bde0e95408eda8bb90.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:31:22,107 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:22] "[33mGET /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:31:22,115 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:22] "[33mGET /main.94bde0e95408eda8bb90.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:31:22,454 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:22] "[33mGET /main.94bde0e95408eda8bb90.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:31:24,928 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:24] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,199 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,242 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,243 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,511 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,554 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,555 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,831 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,862 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:25,863 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:25] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:31:26,141 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:26] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:26,170 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:26] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:31:43,250 - infer.modules.uvr5.vr - INFO - lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav instruments done
+2025-05-14 02:31:43,358 - infer.modules.uvr5.vr - INFO - lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav vocals done
+2025-05-14 02:31:43,456 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:43] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 02:31:49,581 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:31:49] "[33mGET /api/download/vocals_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:32:08,957 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:32:08] "[33mGET /api/download/vocals_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:32:08,986 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:32:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 02:33:52,756 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:52] "[33mGET /main.2721e21d79b7b3e61b28.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:33:52,764 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:52] "[33mGET /main.2721e21d79b7b3e61b28.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:33:53,075 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:53] "[33mGET /main.2721e21d79b7b3e61b28.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:33:53,849 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:53] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,096 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,159 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,161 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,412 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,471 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,473 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,735 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,780 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:33:54,781 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:33:55,047 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:55] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:33:55,092 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:33:55] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:35:00,927 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav instruments done
+2025-05-14 02:35:01,761 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav vocals done
+2025-05-14 02:35:01,968 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:35:01] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 02:35:05,090 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:35:05] "[33mGET /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:35:06,182 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:35:06] "[33mGET /api/download/instrument_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:36:31,276 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:36:31] "[33mGET /main.df53cf799e4eedbe58ea.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:36:32,033 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:36:32] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:36:32,286 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:36:32] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:36:32,347 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:36:32] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:36:32,350 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:36:32] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:37:35,293 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav instruments done
+2025-05-14 02:37:36,143 - infer.modules.uvr5.vr - INFO - poem-read-out-deep-male-voice.wav vocals done
+2025-05-14 02:37:36,358 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:37:36] "POST /api/rvc/separate-vocals HTTP/1.1" 200 -
+2025-05-14 02:38:02,158 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:38:02] "[33mGET /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:38:02,425 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:38:02] "[33mGET /api/download/vocal_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:38:04,528 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:38:04] "[33mGET /api/download/instrument_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:38:05,926 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:38:05] "[33mHEAD /api/download/vocals_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:38:06,268 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:38:06] "[33mGET /api/download/vocal_poem-read-out-deep-male-voice.wav HTTP/1.1[0m" 404 -
+2025-05-14 02:41:24,708 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:41:25,218 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:41:27,118 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:41:27,146 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:41:27,149 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:45:23,229 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:45:23,523 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:45:25,536 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:45:25,562 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:45:25,565 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:49:01,999 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:49:02,259 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:49:04,193 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:49:04,218 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:49:04,221 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:49:40,747 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:49:41,021 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:49:42,936 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:49:42,961 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:49:42,965 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:50:30,621 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 02:50:30,891 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:50:32,822 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:50:32,849 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:50:32,852 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:50:44,011 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-14 02:50:44,282 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:50:46,194 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:50:46,219 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:50:46,222 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:50:58,432 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-14 02:50:58,707 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:51:00,606 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:51:00,632 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:51:00,634 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:52:00,609 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\openvoice_controller.py', reloading
+2025-05-14 02:52:00,880 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:52:02,763 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:52:02,787 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:52:02,790 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:52:43,543 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\openvoice_app.py', reloading
+2025-05-14 02:52:43,813 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:52:45,678 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:52:45,705 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:52:45,708 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:53:11,111 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\openvoice_app.py', reloading
+2025-05-14 02:53:11,394 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:53:13,400 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:53:13,426 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:53:13,429 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:53:16,480 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\rvc_controller.py', reloading
+2025-05-14 02:53:16,796 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:53:19,064 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:53:19,089 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:53:19,092 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:53:20,124 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\openvoice_controller.py', reloading
+2025-05-14 02:53:20,492 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:53:22,556 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:53:22,582 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:53:22,585 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:53:27,683 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 02:53:27,946 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:53:29,815 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:53:29,842 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:53:29,845 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:53:45,074 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 02:53:45,354 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:53:47,283 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:53:47,309 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:53:47,311 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:54:02,563 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 02:54:02,833 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:54:04,773 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:54:04,808 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:54:04,812 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:54:32,296 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 02:54:32,574 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:54:34,494 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:54:34,519 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:54:34,521 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:55:12,721 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:55:12] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:55:12,982 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:55:12] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:55:13,029 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:55:13] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:55:13,031 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:55:13] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:56:00,192 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-14 02:56:00,744 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 02:56:02,639 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 02:56:02,666 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 02:56:02,668 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 02:57:44,677 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:44] "[33mGET /main.6291ac76ca2556395cea.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:57:45,439 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:45] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:57:45,695 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:45] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:57:45,759 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:45] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:57:45,762 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:45] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:57:57,926 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:57] "[33mGET /main.584ae8b62561f006dcd7.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:57:58,780 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:58] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:57:59,047 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:59] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:57:59,095 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:59] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:57:59,097 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:57:59] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:58:06,740 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:06] "[33mGET /main.ab5ac5f3f8e6dad487fc.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:58:07,492 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:07] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:58:07,748 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:07] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:58:07,795 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:07] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:58:07,798 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:07] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:58:33,540 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:33] "[33mGET /main.c7ac7743f5b437ebb8ba.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 02:58:34,274 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:34] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:58:34,528 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:34] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 02:58:34,591 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:34] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 02:58:34,594 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 02:58:34] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:00:36,113 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:36] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:00:36,374 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:36] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:00:36,420 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:36] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:00:36,423 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:36] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:00:37,601 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:37,602 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:37] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:37,913 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:37,914 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:37] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:48,763 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:48] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:00:49,071 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:49] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:00:50,281 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:50,282 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:50] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:50,603 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:50,605 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:50] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:51,710 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:51] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:00:52,027 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:52] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:00:53,550 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:53,550 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:53] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:53,861 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:00:53,864 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:53] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:00:56,233 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:56] "GET /api/tts-history HTTP/1.1" 200 -
+2025-05-14 03:00:56,547 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:56] "GET /api/tts-history HTTP/1.1" 200 -
+2025-05-14 03:00:58,532 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:58] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:00:58,843 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:00:58] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:01:02,786 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:02,787 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:02] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:03,101 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:03,104 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:03] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:03,631 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:03,632 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:03] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:03,945 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:03,946 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:03] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:04,196 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:04] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:01:04,197 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:04] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:01:04,679 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:04,680 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:04,945 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:04,947 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:05,056 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:05] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:01:05,367 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:05] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:01:07,062 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:07,062 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:07] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:07,379 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:07,381 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:07] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:09,880 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:09] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:01:10,191 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:10] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:01:11,693 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:11,694 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:11] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:12,009 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:01:12,010 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:12] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:01:47,935 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 03:01:48,272 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:01:50,256 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:01:50,281 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:01:50,284 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:01:53,890 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:53] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:01:54,142 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:54] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:01:54,206 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:01:54,208 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:01:54] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:02:15,446 - models.openvoice_controller - INFO - Resample tu 44100Hz sang 24000Hz
+2025-05-14 03:02:15,752 - models.openvoice_controller - INFO - Da luu file fix: D:\Code\voice\backend\results\temp\poem-read-out-deep-male-voice.wav
+2025-05-14 03:02:16,650 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:02:16] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-14 03:03:07,264 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\rvc_routes.py', reloading
+2025-05-14 03:03:07,994 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:03:10,115 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:03:10,143 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:03:10,146 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:03:16,668 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:03:16] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:03:16,906 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:03:16] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:03:16,986 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:03:16] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:03:16,989 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:03:16] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:03:25,237 - models.openvoice_controller - INFO - Resample tu 44100Hz sang 24000Hz
+2025-05-14 03:03:25,443 - models.openvoice_controller - INFO - Da luu file fix: D:\Code\voice\backend\results\temp\poem-read-out-deep-male-voice.wav
+2025-05-14 03:03:26,205 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:03:26] "[35m[1mPOST /api/convert HTTP/1.1[0m" 500 -
+2025-05-14 03:03:59,848 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\openvoice_app.py', reloading
+2025-05-14 03:04:00,620 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:04:02,762 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:04:02,789 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:04:02,792 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:04:17,267 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:04:17] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:04:17,517 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:04:17] "GET /api/rvc/models HTTP/1.1" 200 -
+2025-05-14 03:04:17,578 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:04:17] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:04:17,581 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:04:17] "GET /api/uvr/models HTTP/1.1" 200 -
+2025-05-14 03:05:43,644 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:05:43] "POST /api/convert HTTP/1.1" 200 -
+2025-05-14 03:06:59,086 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:06:59,089 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:06:59] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:06:59,350 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:06:59,352 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:06:59] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:08:50,102 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:08:50] "[33mGET /main.6291ac76ca2556395cea.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 03:08:50,747 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:08:50,747 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:08:50] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:08:51,001 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:08:51,001 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:08:51] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:09:11,710 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:09:11] "[33mGET /main.25c2558354e18811bf16.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 03:09:36,467 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:09:36] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:09:36,775 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:09:36] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:10:01,641 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:01,641 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:01] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:01,944 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:01,945 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:01] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:02,207 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:02] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:02,519 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:02] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:02,785 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:02,785 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:02] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:03,051 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:03,052 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:03] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:04,278 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:04] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:04,588 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:04] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:06,863 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:06,863 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:06] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:07,173 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:07,174 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:07] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:07,464 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:07,465 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:07] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:07,775 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:07,775 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:07] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:08,008 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:08] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:08,038 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:08] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:34,744 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:34] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:10:35,053 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:35] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:10:37,334 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:37,334 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:37] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:37,645 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:37,647 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:37] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:37,984 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:37] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:38,299 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:38] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:38,586 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:38,586 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:38] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:38,902 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:38,903 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:38] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:39,254 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:39,255 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:39] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:39,567 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:10:39,568 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:39] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:10:39,831 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:39] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:10:39,987 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:10:39] "GET /api/conversion-history HTTP/1.1" 200 -
+2025-05-14 03:13:14,900 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\openvoice_controller.py', reloading
+2025-05-14 03:13:15,184 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:13:17,074 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:13:17,100 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:13:17,103 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:14:33,336 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 03:14:33,611 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:14:35,513 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:14:35,539 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:14:35,542 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:15:26,286 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:26] "[33mGET /main.4c3e99274b63e46f2e27.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 03:15:26,923 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:26] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:27,178 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:27] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:48,426 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:48] "[33mGET /main.1e75611d173dfe40eef7.hot-update.json HTTP/1.1[0m" 404 -
+2025-05-14 03:15:48,751 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:48] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:49,061 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:49] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:51,264 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:51] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:15:51,581 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:51] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:15:52,868 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:52] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:53,180 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:53] "GET /api/models HTTP/1.1" 200 -
+2025-05-14 03:15:54,497 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:15:54,498 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:54] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:15:54,802 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:15:54,803 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:54] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:15:55,068 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:55] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:15:55,270 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:55] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:15:55,660 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:15:55,660 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:55] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:15:55,969 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:15:55,970 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:15:55] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:16:09,123 - models.openvoice_controller - INFO - Resample tu 44100Hz sang 24000Hz
+2025-05-14 03:16:09,451 - models.openvoice_controller - INFO - Da luu file fix: D:\Code\voice\backend\results\temp\poem-read-out-deep-male-voice.wav
+2025-05-14 03:16:10,207 - models.openvoice_controller - INFO - Su dung thiet bi: cpu
+2025-05-14 03:16:10,207 - models.openvoice_controller - INFO - Khoi tao ToneColorConverter
+2025-05-14 03:16:12,080 - models.openvoice_controller - INFO - Dang load checkpoint: D:\Code\voice\ai\openvoice\checkpoints_v2\converter\checkpoint.pth
+2025-05-14 03:16:13,421 - models.openvoice_controller - INFO - Resample tu 44100Hz sang 24000Hz
+2025-05-14 03:16:13,472 - models.openvoice_controller - INFO - Da luu file fix: D:\Code\voice\backend\results\temp\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav
+2025-05-14 03:16:33,035 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:33] "POST /api/convert HTTP/1.1" 200 -
+2025-05-14 03:16:35,573 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:35] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:16:35,830 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:35] "GET /api/conversion-history?model_type=openvoice HTTP/1.1" 200 -
+2025-05-14 03:16:52,462 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:52] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav?t=1747217812119 HTTP/1.1[0m" 206 -
+2025-05-14 03:16:52,703 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-14 03:16:53,908 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:53] "[35m[1mGET /api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav?t=1747217813902 HTTP/1.1[0m" 206 -
+2025-05-14 03:16:57,320 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:57] "[35m[1mGET /api/play-audio?path=D:\\Code\\voice\\ai\\openvoice\\sample_voices\\lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav HTTP/1.1[0m" 206 -
+2025-05-14 03:16:59,733 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:16:59] "GET /api/download/poem-read-out-deep-male-voice_openvoice_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav HTTP/1.1" 200 -
+2025-05-14 03:17:04,008 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:17:04,009 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:17:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:17:04,315 - models.openvoice_controller - INFO - Da tim thay 11 speakers cho TTS: ['en-au', 'en-br', 'en-default', 'en-india', 'en-newest', 'en-us', 'es', 'fr', 'jp', 'kr', 'zh']
+2025-05-14 03:17:04,315 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:17:04] "GET /api/tts/speakers HTTP/1.1" 200 -
+2025-05-14 03:18:17,862 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:18:17] "OPTIONS /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:18:18,143 - models.openvoice_controller - INFO - Su dung speaker embedding: D:\Code\voice\ai\openvoice\checkpoints_v2\base_speakers\ses\en-au.pth
+2025-05-14 03:18:28,782 - models.openvoice_controller - ERROR - Traceback (most recent call last):
+  File "D:\Code\voice\backend\models\openvoice_controller.py", line 352, in generate_speech_with_melotts
+    tts.tts_to_file(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\api.py", line 100, in tts_to_file
+    bert, ja_bert, phones, tones, lang_ids = utils.get_text_for_tts_infer(t, language, self.hps, device, self.symbol_to_id)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\utils.py", line 23, in get_text_for_tts_infer
+    norm_text, phone, tone, word2ph = clean_text(text, language_str)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\text\cleaner.py", line 12, in clean_text
+    phones, tones, word2ph = language_module.g2p(norm_text)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\text\english.py", line 242, in g2p
+    phone_list = list(filter(lambda p: p != " ", _g2p(w)))
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\g2p_en\g2p.py", line 162, in __call__
+    tokens = pos_tag(words)  # tuples of (word, tag)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\__init__.py", line 168, in pos_tag
+    tagger = _get_tagger(lang)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\__init__.py", line 110, in _get_tagger
+    tagger = PerceptronTagger()
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\perceptron.py", line 183, in __init__
+    self.load_from_json(lang)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\perceptron.py", line 273, in load_from_json
+    loc = find(f"taggers/averaged_perceptron_tagger_{lang}/")
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93maveraged_perceptron_tagger_eng[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('averaged_perceptron_tagger_eng')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtaggers/averaged_perceptron_tagger_eng/[0m
+
+  Searched in:
+    - 'C:\\Users\\XGame/nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\share\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\lib\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+
+2025-05-14 03:18:28,790 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:18:28] "[35m[1mPOST /api/tts/generate HTTP/1.1[0m" 500 -
+2025-05-14 03:18:51,672 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:18:51] "OPTIONS /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:18:51,996 - models.openvoice_controller - INFO - Su dung speaker embedding: D:\Code\voice\ai\openvoice\checkpoints_v2\base_speakers\ses\en-au.pth
+2025-05-14 03:18:59,492 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:18:59] "POST /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:19:04,295 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:19:04] "[35m[1mGET /api/download/tts_1747217931_en-au.wav HTTP/1.1[0m" 206 -
+2025-05-14 03:19:14,168 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:19:14] "OPTIONS /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:19:14,503 - models.openvoice_controller - INFO - Su dung speaker embedding: D:\Code\voice\ai\openvoice\checkpoints_v2\base_speakers\ses\jp.pth
+2025-05-14 03:19:43,614 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:19:43] "POST /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:19:47,291 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:19:47] "[35m[1mGET /api/download/tts_1747217954_jp.wav HTTP/1.1[0m" 206 -
+2025-05-14 03:20:35,966 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:20:35] "OPTIONS /api/tts/generate HTTP/1.1" 200 -
+2025-05-14 03:20:36,255 - models.openvoice_controller - INFO - Su dung speaker embedding: D:\Code\voice\ai\openvoice\checkpoints_v2\base_speakers\ses\en-br.pth
+2025-05-14 03:20:38,019 - models.openvoice_controller - ERROR - Traceback (most recent call last):
+  File "D:\Code\voice\backend\models\openvoice_controller.py", line 352, in generate_speech_with_melotts
+    tts.tts_to_file(
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\api.py", line 100, in tts_to_file
+    bert, ja_bert, phones, tones, lang_ids = utils.get_text_for_tts_infer(t, language, self.hps, device, self.symbol_to_id)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\utils.py", line 23, in get_text_for_tts_infer
+    norm_text, phone, tone, word2ph = clean_text(text, language_str)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\text\cleaner.py", line 12, in clean_text
+    phones, tones, word2ph = language_module.g2p(norm_text)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\melo\text\english.py", line 242, in g2p
+    phone_list = list(filter(lambda p: p != " ", _g2p(w)))
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\g2p_en\g2p.py", line 162, in __call__
+    tokens = pos_tag(words)  # tuples of (word, tag)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\__init__.py", line 168, in pos_tag
+    tagger = _get_tagger(lang)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\__init__.py", line 110, in _get_tagger
+    tagger = PerceptronTagger()
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\perceptron.py", line 183, in __init__
+    self.load_from_json(lang)
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\tag\perceptron.py", line 273, in load_from_json
+    loc = find(f"taggers/averaged_perceptron_tagger_{lang}/")
+  File "C:\Users\XGame\AppData\Local\Programs\Python\Python310\lib\site-packages\nltk\data.py", line 579, in find
+    raise LookupError(resource_not_found)
+LookupError: 
+**********************************************************************
+  Resource [93maveraged_perceptron_tagger_eng[0m not found.
+  Please use the NLTK Downloader to obtain the resource:
+
+  [31m>>> import nltk
+  >>> nltk.download('averaged_perceptron_tagger_eng')
+  [0m
+  For more information see: https://www.nltk.org/data.html
+
+  Attempted to load [93mtaggers/averaged_perceptron_tagger_eng/[0m
+
+  Searched in:
+    - 'C:\\Users\\XGame/nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\share\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Local\\Programs\\Python\\Python310\\lib\\nltk_data'
+    - 'C:\\Users\\XGame\\AppData\\Roaming\\nltk_data'
+    - 'C:\\nltk_data'
+    - 'D:\\nltk_data'
+    - 'E:\\nltk_data'
+**********************************************************************
+
+
+2025-05-14 03:20:38,043 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 03:20:38] "[35m[1mPOST /api/tts/generate HTTP/1.1[0m" 500 -
+2025-05-14 03:22:04,747 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 03:22:06,291 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:22:08,462 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:22:08,489 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:22:08,493 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:23:44,027 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\models\\openvoice_controller.py', reloading
+2025-05-14 03:23:44,323 - werkzeug - INFO -  * Restarting with stat
+2025-05-14 03:23:49,425 - models.openvoice_controller - INFO - Da khoi tao OpenVoice controller (CPU mode)
+2025-05-14 03:23:49,459 - werkzeug - WARNING -  * Debugger is active!
+2025-05-14 03:23:49,462 - werkzeug - INFO -  * Debugger PIN: 487-507-292
+2025-05-14 03:24:53,592 - werkzeug - INFO -  * Detected change in 'D:\\Code\\voice\\backend\\app.py', reloading
+2025-05-14 03:24:53,981 - werkzeug - INFO -  * Restarting with stat

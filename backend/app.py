@@ -6,14 +6,20 @@ from werkzeug.utils import secure_filename
 import logging
 import numpy as np
 from flask_cors import CORS  # Thêm import CORS
+import sys
+import io
+from logging.handlers import RotatingFileHandler
+import traceback
+from datetime import datetime
 
 # Import các controllers và models
 from models.openvoice_controller import OpenVoiceController
 from models.rvc_controller import RVCController
-from database import db, User, SystemLog
+from database import db, User, SystemLog, init_db
 from admin_routes import admin_bp
 from ai_engineer_routes import ai_engineer_bp
 from rvc_routes import rvc_bp  # Thêm import RVC blueprint
+from auth_routes import auth_bp  # Thêm import Auth blueprint
 
 # Đường dẫn tới thư mục build của React
 FRONTEND_BUILD_FOLDER = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'frontend', 'build'))
@@ -30,6 +36,16 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///voice_changer.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your-secret-key'  # Thay đổi trong production
 
+# Đường dẫn thư mục OpenVoice
+app.config['OPENVOICE_FOLDER'] = os.path.join(app.config['RESULTS_FOLDER'], 'openvoice')
+app.config['OPENVOICE_VC_FOLDER'] = os.path.join(app.config['OPENVOICE_FOLDER'], 'voice_conversion')
+app.config['OPENVOICE_TTS_FOLDER'] = os.path.join(app.config['OPENVOICE_FOLDER'], 'tts')
+
+# Đường dẫn thư mục RVC
+app.config['RVC_FOLDER'] = os.path.join(app.config['RESULTS_FOLDER'], 'rvc')
+app.config['RVC_VC_FOLDER'] = os.path.join(app.config['RVC_FOLDER'], 'voice_conversion')
+app.config['RVC_UVR_FOLDER'] = os.path.join(app.config['RVC_FOLDER'], 'uvr')
+
 # Khởi tạo database
 db.init_app(app)
 
@@ -38,11 +54,29 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("voice_changer.log"),
-        logging.StreamHandler()
+        # Sử dụng RotatingFileHandler với encoding UTF-8
+        RotatingFileHandler(
+            'app.log', 
+            maxBytes=10*1024*1024,  # 10MB
+            backupCount=5,
+            encoding='utf-8'  # Sử dụng UTF-8 để hỗ trợ tiếng Việt
+        ),
+        logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger(__name__)
+
+# Đặt encoding cho stdout để hỗ trợ tiếng Việt
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        # Python < 3.7 không có hàm reconfigure
+        logger.warning("Không thể cấu hình lại encoding cho stdout")
+
+# Thêm đường dẫn hiện tại vào sys.path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(current_dir)
 
 # Khởi tạo các controllers
 openvoice = OpenVoiceController()
@@ -51,15 +85,26 @@ rvc = RVCController()
 # Đảm bảo thư mục upload và results tồn tại
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 os.makedirs(app.config['RESULTS_FOLDER'], exist_ok=True)
+os.makedirs(app.config['OPENVOICE_FOLDER'], exist_ok=True)
+os.makedirs(app.config['OPENVOICE_VC_FOLDER'], exist_ok=True)
+os.makedirs(app.config['OPENVOICE_TTS_FOLDER'], exist_ok=True)
+os.makedirs(app.config['RVC_FOLDER'], exist_ok=True)
+os.makedirs(app.config['RVC_VC_FOLDER'], exist_ok=True)
+os.makedirs(app.config['RVC_UVR_FOLDER'], exist_ok=True)
 
 # Đăng ký các blueprint
 app.register_blueprint(admin_bp)
 app.register_blueprint(ai_engineer_bp)
 app.register_blueprint(rvc_bp)  # Đăng ký RVC blueprint
+app.register_blueprint(auth_bp)  # Đăng ký Auth blueprint
 
 # Tạo bảng database khi khởi động
 with app.app_context():
-    db.create_all()
+    try:
+        # Sử dụng hàm init_db để tạo lại database hoàn toàn
+        init_db(app)
+    except Exception as e:
+        logger.error(f"Lỗi khi khởi tạo database: {str(e)}")
 
 @app.route('/api/health', methods=['GET'])
 def health_check():
@@ -120,7 +165,11 @@ def convert_audio():
             }
             
             # Lưu lịch sử vào file
-            history_file = os.path.join(app.config['RESULTS_FOLDER'], 'conversion_history.json')
+            if model_type == 'openvoice':
+                history_file = os.path.join(app.config['OPENVOICE_VC_FOLDER'], 'conversion_history.json')
+            else:
+                history_file = os.path.join(app.config['RVC_VC_FOLDER'], 'conversion_history.json')
+                
             history = []
             if os.path.exists(history_file):
                 try:
@@ -159,7 +208,59 @@ def convert_audio():
 @app.route('/api/download/<filename>', methods=['GET'])
 def download_file(filename):
     """API để tải xuống file kết quả"""
-    return send_from_directory(app.config['RESULTS_FOLDER'], filename, as_attachment=True)
+    # Kiểm tra file trong thư mục OpenVoice voice_conversion
+    file_path = os.path.join(app.config['OPENVOICE_VC_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['OPENVOICE_VC_FOLDER'], filename, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục OpenVoice tts
+    file_path = os.path.join(app.config['OPENVOICE_TTS_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['OPENVOICE_TTS_FOLDER'], filename, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục RVC voice_conversion
+    file_path = os.path.join(app.config['RVC_VC_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['RVC_VC_FOLDER'], filename, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục RVC UVR vocals
+    vocals_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'vocals')
+    file_path = os.path.join(vocals_dir, filename)
+    if os.path.exists(file_path):
+        logger.info(f"Đã tìm thấy file vocals: {file_path}")
+        return send_from_directory(vocals_dir, filename, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục RVC UVR instrumental
+    instrumental_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'instrumental')
+    file_path = os.path.join(instrumental_dir, filename)
+    if os.path.exists(file_path):
+        logger.info(f"Đã tìm thấy file instrumental: {file_path}")
+        return send_from_directory(instrumental_dir, filename, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục RVC UVR (thư mục gốc)
+    file_path = os.path.join(app.config['RVC_UVR_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['RVC_UVR_FOLDER'], filename, as_attachment=True)
+    
+    # Kiểm tra trong các thư mục con của UVR tiềm năng khác
+    for subdir in ['vocals', 'instrumental']:
+        uvr_dir = os.path.join(app.config['RVC_UVR_FOLDER'], subdir)
+        if os.path.exists(uvr_dir):
+            # Kiểm tra các file trong thư mục
+            for file in os.listdir(uvr_dir):
+                # Kiểm tra tên file tương tự
+                if filename in file:
+                    logger.info(f"Đã tìm thấy file tương tự: {os.path.join(uvr_dir, file)}")
+                    return send_from_directory(uvr_dir, file, as_attachment=True)
+    
+    # Kiểm tra file trong thư mục results chung
+    file_path = os.path.join(app.config['RESULTS_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['RESULTS_FOLDER'], filename, as_attachment=True)
+    
+    # Nếu không tìm thấy file ở tất cả các vị trí
+    logger.error(f"Không tìm thấy file: {filename} trong bất kỳ thư mục nào")
+    return jsonify({'error': f'Không tìm thấy file {filename}'}), 404
 
 @app.route('/api/play-audio', methods=['GET'])
 def play_audio():
@@ -168,6 +269,8 @@ def play_audio():
     
     if not audio_path:
         return jsonify({'error': 'Không có đường dẫn file'}), 400
+    
+    logger.info(f"Yêu cầu phát file âm thanh: {audio_path}")
     
     # Kiểm tra xem file có phải là file mẫu từ OpenVoice không
     openvoice_voices = openvoice.list_available_voices()
@@ -181,10 +284,59 @@ def play_audio():
         # Phát file mẫu từ RVC
         return send_from_directory(os.path.dirname(audio_path), os.path.basename(audio_path))
     
-    # Nếu không phải file mẫu, kiểm tra xem có phải file kết quả không
-    if os.path.basename(audio_path) in os.listdir(app.config['RESULTS_FOLDER']):
-        return send_from_directory(app.config['RESULTS_FOLDER'], os.path.basename(audio_path))
+    # Kiểm tra trong các thư mục kết quả
+    filename = os.path.basename(audio_path)
+    logger.info(f"Tìm kiếm file: {filename}")
     
+    # Kiểm tra trong thư mục OpenVoice voice_conversion
+    file_path = os.path.join(app.config['OPENVOICE_VC_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['OPENVOICE_VC_FOLDER'], filename)
+    
+    # Kiểm tra trong thư mục OpenVoice tts
+    file_path = os.path.join(app.config['OPENVOICE_TTS_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['OPENVOICE_TTS_FOLDER'], filename)
+    
+    # Kiểm tra trong thư mục RVC voice_conversion
+    file_path = os.path.join(app.config['RVC_VC_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['RVC_VC_FOLDER'], filename)
+    
+    # Kiểm tra trong thư mục RVC UVR vocals
+    vocals_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'vocals')
+    file_path = os.path.join(vocals_dir, filename)
+    if os.path.exists(file_path):
+        logger.info(f"Đã tìm thấy file vocals để phát: {file_path}")
+        return send_from_directory(vocals_dir, filename)
+    
+    # Kiểm tra trong thư mục RVC UVR instrumental
+    instrumental_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'instrumental')
+    file_path = os.path.join(instrumental_dir, filename)
+    if os.path.exists(file_path):
+        logger.info(f"Đã tìm thấy file instrumental để phát: {file_path}")
+        return send_from_directory(instrumental_dir, filename)
+    
+    # Kiểm tra trong thư mục RVC UVR (thư mục gốc)
+    file_path = os.path.join(app.config['RVC_UVR_FOLDER'], filename)
+    if os.path.exists(file_path):
+        return send_from_directory(app.config['RVC_UVR_FOLDER'], filename)
+    
+    # Tìm các file tương tự trong các thư mục con của UVR
+    for subdir in ['vocals', 'instrumental']:
+        uvr_dir = os.path.join(app.config['RVC_UVR_FOLDER'], subdir)
+        if os.path.exists(uvr_dir):
+            for file in os.listdir(uvr_dir):
+                # Kiểm tra tên file tương tự
+                if filename in file:
+                    logger.info(f"Đã tìm thấy file tương tự để phát: {os.path.join(uvr_dir, file)}")
+                    return send_from_directory(uvr_dir, file)
+    
+    # Kiểm tra trong thư mục chung
+    if os.path.exists(os.path.join(app.config['RESULTS_FOLDER'], filename)):
+        return send_from_directory(app.config['RESULTS_FOLDER'], filename)
+    
+    logger.error(f"Không tìm thấy file âm thanh: {filename}")
     return jsonify({'error': 'Không tìm thấy file âm thanh'}), 404
 
 @app.route('/api/models', methods=['GET'])
@@ -247,7 +399,7 @@ def text_to_speech():
             }
             
             # Lưu lịch sử vào file
-            history_file = os.path.join(app.config['RESULTS_FOLDER'], 'tts_history.json')
+            history_file = os.path.join(app.config['OPENVOICE_TTS_FOLDER'], 'tts_history.json')
             history = []
             if os.path.exists(history_file):
                 try:
@@ -283,7 +435,7 @@ def get_logs():
     """API chỉ dành cho admin để xem logs"""
     # Thêm xác thực admin ở đây
     try:
-        with open("voice_changer.log", "r") as log_file:
+        with open("app.log", "r") as log_file:
             logs = log_file.readlines()[-100:]  # 100 dòng cuối
         return jsonify({'logs': logs})
     except Exception as e:
@@ -353,7 +505,15 @@ def get_voice_details():
 @app.route('/api/conversion-history', methods=['GET'])
 def get_conversion_history():
     """Lấy lịch sử chuyển đổi giọng nói"""
-    history_file = os.path.join(app.config['RESULTS_FOLDER'], 'conversion_history.json')
+    model_type = request.args.get('model_type', 'all')
+    
+    if model_type == 'openvoice':
+        history_file = os.path.join(app.config['OPENVOICE_VC_FOLDER'], 'conversion_history.json')
+    elif model_type == 'rvc':
+        history_file = os.path.join(app.config['RVC_VC_FOLDER'], 'conversion_history.json')
+    else:
+        # Mặc định hoặc 'all' - trả về danh sách trống
+        return jsonify([])
     
     if not os.path.exists(history_file):
         return jsonify([])
@@ -366,10 +526,80 @@ def get_conversion_history():
         logger.error(f"Lỗi khi đọc lịch sử chuyển đổi: {str(e)}")
         return jsonify([])
 
+@app.route('/api/uvr-history', methods=['GET'])
+def get_uvr_history():
+    """Lấy lịch sử tách giọng nói UVR"""
+    history_file = os.path.join(app.config['RVC_UVR_FOLDER'], 'uvr_history.json')
+    
+    logger.info(f"Đang tìm kiếm file lịch sử UVR tại: {history_file}")
+    
+    if not os.path.exists(history_file):
+        logger.warning(f"Không tìm thấy file lịch sử UVR: {history_file}")
+        return jsonify([])
+    
+    try:
+        with open(history_file, 'r', encoding='utf-8') as f:
+            history = json.load(f)
+        
+        # Thêm log để gỡ lỗi
+        logger.info(f"Đã đọc lịch sử UVR: {len(history)} mục")
+        
+        # Kiểm tra và cập nhật các đường dẫn URL nếu cần
+        for item in history:
+            # Tạo các đường dẫn đến thư mục vocals và instrumental
+            vocals_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'vocals')
+            instrumental_dir = os.path.join(app.config['RVC_UVR_FOLDER'], 'instrumental')
+            
+            # Kiểm tra file vocals
+            expected_vocals_file = item.get('vocals_file')
+            if expected_vocals_file:
+                vocals_path = os.path.join(vocals_dir, expected_vocals_file)
+                if not os.path.exists(vocals_path):
+                    # Tìm file thay thế trong thư mục vocals
+                    source_file_base = os.path.splitext(item.get('source_file', ''))[0]
+                    if source_file_base:
+                        for filename in os.listdir(vocals_dir):
+                            if source_file_base in filename:
+                                logger.info(f"Tìm thấy file vocals thay thế: {filename} thay vì {expected_vocals_file}")
+                                item['vocals_file'] = filename
+                                item['vocals_url'] = f"/api/download/{filename}"
+                                break
+            
+            # Kiểm tra file instrumental
+            expected_instrumental_file = item.get('instrumental_file')
+            if expected_instrumental_file:
+                instrumental_path = os.path.join(instrumental_dir, expected_instrumental_file)
+                if not os.path.exists(instrumental_path):
+                    # Tìm file thay thế trong thư mục instrumental
+                    source_file_base = os.path.splitext(item.get('source_file', ''))[0]
+                    if source_file_base:
+                        for filename in os.listdir(instrumental_dir):
+                            if source_file_base in filename:
+                                logger.info(f"Tìm thấy file instrumental thay thế: {filename} thay vì {expected_instrumental_file}")
+                                item['instrumental_file'] = filename
+                                item['instrumental_url'] = f"/api/download/{filename}"
+                                break
+            
+            # Đảm bảo rằng vocals_url và instrumental_url đều bắt đầu bằng /api/download/
+            if 'vocals_url' in item and not item['vocals_url'].startswith('/api/download/'):
+                item['vocals_url'] = f"/api/download/{item['vocals_file']}"
+                
+            if 'instrumental_url' in item and not item['instrumental_url'].startswith('/api/download/'):
+                item['instrumental_url'] = f"/api/download/{item['instrumental_file']}"
+                
+        # Cập nhật file lịch sử với các đường dẫn đã chỉnh sửa
+        with open(history_file, 'w', encoding='utf-8') as f:
+            json.dump(history, f, ensure_ascii=False, indent=2)
+            
+        return jsonify(history)
+    except Exception as e:
+        logger.exception(f"Lỗi khi đọc lịch sử UVR: {str(e)}")
+        return jsonify([])
+
 @app.route('/api/tts-history', methods=['GET'])
 def get_tts_history():
     """Lấy lịch sử text-to-speech"""
-    history_file = os.path.join(app.config['RESULTS_FOLDER'], 'tts_history.json')
+    history_file = os.path.join(app.config['OPENVOICE_TTS_FOLDER'], 'tts_history.json')
     
     if not os.path.exists(history_file):
         return jsonify([])

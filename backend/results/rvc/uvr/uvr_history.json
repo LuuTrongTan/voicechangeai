@@ -1,0 +1,119 @@
+[
+  {
+    "timestamp": 1747219419.5187235,
+    "source_file": "nhac.wav",
+    "model_name": "HP5-%E4%B8%BB%E6%97%8B%E5%BE%8B%E4%BA%BA%E5%A3%B0vocals%2B%E5%85%B6%E4%BB%96instrumentals",
+    "vocals_file": "vocal_nhac.wav_0.wav",
+    "vocals_url": "/api/download/vocal_nhac.wav_0.wav",
+    "instrumental_file": "instrument_nhac.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_nhac.wav_0.wav"
+  },
+  {
+    "timestamp": 1747219727.6278872,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_name": "HP2-%E4%BA%BA%E5%A3%B0vocals%2B%E9%9D%9E%E4%BA%BA%E5%A3%B0instrumentals",
+    "vocals_file": "vocal_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "vocals_url": "/api/download/vocal_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "instrumental_file": "instrument_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav"
+  },
+  {
+    "timestamp": 1747272499.4273517,
+    "source_file": "lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav",
+    "model_name": "HP2-%E4%BA%BA%E5%A3%B0vocals%2B%E9%9D%9E%E4%BA%BA%E5%A3%B0instrumentals",
+    "vocals_file": "vocal_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "vocals_url": "/api/download/vocal_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "instrumental_file": "instrument_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_lo-fi-spoken-vintage-beat-about-to-drop_F_major.wav_0.wav"
+  },
+  {
+    "timestamp": 1747272728.236862,
+    "source_file": "poem-read-out-deep-male-voice.wav",
+    "model_name": "HP2-%E4%BA%BA%E5%A3%B0vocals%2B%E9%9D%9E%E4%BA%BA%E5%A3%B0instrumentals",
+    "vocals_file": "vocal_poem-read-out-deep-male-voice.wav_0.wav",
+    "vocals_url": "/api/download/vocal_poem-read-out-deep-male-voice.wav_0.wav",
+    "instrumental_file": "instrument_poem-read-out-deep-male-voice.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_poem-read-out-deep-male-voice.wav_0.wav"
+  },
+  {
+    "timestamp": 1747292637.7677898,
+    "source_file": "DJ LAGI TAMVAN X NINIX TITANIC FULL SONG MAMAN SOUND MASWAN VIRAL TIKTOK 2024.mp3",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_DJ LAGI TAMVAN X NINIX TITANIC FULL SONG MAMAN SOUND MASWAN VIRAL TIKTOK 2024.mp3_0.wav",
+    "vocals_url": "/api/download/vocal_DJ LAGI TAMVAN X NINIX TITANIC FULL SONG MAMAN SOUND MASWAN VIRAL TIKTOK 2024.mp3_0.wav",
+    "instrumental_file": "instrument_DJ LAGI TAMVAN X NINIX TITANIC FULL SONG MAMAN SOUND MASWAN VIRAL TIKTOK 2024.mp3_0.wav",
+    "instrumental_url": "/api/download/instrument_DJ LAGI TAMVAN X NINIX TITANIC FULL SONG MAMAN SOUND MASWAN VIRAL TIKTOK 2024.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747293915.010254,
+    "source_file": "Titanic Remix Laback feat. Alexis Carlier - My Heart Will Go On 2025.mp3",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_Titanic Remix Laback feat. Alexis Carlier - My Heart Will Go On 2025.mp3_0.wav",
+    "vocals_url": "/api/download/vocal_Titanic Remix Laback feat. Alexis Carlier - My Heart Will Go On 2025.mp3_0.wav",
+    "instrumental_file": "instrument_Titanic Remix Laback feat. Alexis Carlier - My Heart Will Go On 2025.mp3_0.wav",
+    "instrumental_url": "/api/download/instrument_Titanic Remix Laback feat. Alexis Carlier - My Heart Will Go On 2025.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747296364.198646,
+    "source_file": "nhac.wav",
+    "model_name": "HP2_all_vocals",
+    "vocals_file": "vocal_nhac.wav_0.wav",
+    "vocals_url": "/api/download/vocal_nhac.wav_0.wav",
+    "instrumental_file": "instrument_nhac.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_nhac.wav_0.wav"
+  },
+  {
+    "timestamp": 1747296758.883268,
+    "source_file": "nhac.wav",
+    "model_name": "HP2-%E4%BA%BA%E5%A3%B0vocals%2B%E9%9D%9E%E4%BA%BA%E5%A3%B0instrumentals",
+    "vocals_file": "vocal_nhac.wav_0.wav",
+    "vocals_url": "/api/download/vocal_nhac.wav_0.wav",
+    "instrumental_file": "instrument_nhac.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_nhac.wav_0.wav"
+  },
+  {
+    "timestamp": 1747299483.1106336,
+    "source_file": "nhac.wav",
+    "model_name": "HP2-%E4%BA%BA%E5%A3%B0vocals%2B%E9%9D%9E%E4%BA%BA%E5%A3%B0instrumentals",
+    "vocals_file": "vocal_nhac.wav_0.wav",
+    "vocals_url": "/api/download/vocal_nhac.wav_0.wav",
+    "instrumental_file": "instrument_nhac.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_nhac.wav_0.wav"
+  },
+  {
+    "timestamp": 1747299731.6851578,
+    "source_file": "nhac.wav",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_nhac.wav_0.wav",
+    "vocals_url": "/api/download/vocal_nhac.wav_0.wav",
+    "instrumental_file": "instrument_nhac.wav_0.wav",
+    "instrumental_url": "/api/download/instrument_nhac.wav_0.wav"
+  },
+  {
+    "timestamp": 1747301095.2109861,
+    "source_file": "SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "vocals_url": "/api/download/vocal_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "instrumental_file": "instrument_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "instrumental_url": "/api/download/instrument_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747301622.4206634,
+    "source_file": "SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "vocals_url": "/api/download/vocal_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "instrumental_file": "instrument_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav",
+    "instrumental_url": "/api/download/instrument_SƠN TÙNG M-TP ｜ ĐỪNG LÀM TRÁI TIM ANH ĐAU ｜ OFFICIAL MUSIC VIDEO.mp3_0.wav"
+  },
+  {
+    "timestamp": 1747302033.178462,
+    "source_file": "sontung.mp3",
+    "model_name": "HP5_only_main_vocal",
+    "vocals_file": "vocal_sontung.mp3_0.wav",
+    "vocals_url": "/api/download/vocal_sontung.mp3_0.wav",
+    "instrumental_file": "instrument_sontung.mp3_0.wav",
+    "instrumental_url": "/api/download/instrument_sontung.mp3_0.wav"
+  }
+]
